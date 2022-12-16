@@ -1,0 +1,54 @@
+.bg {
+    -fx-background-image: url("./img/background.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;    
+}
+
+.dark {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 20;
+}
+
+.btn-primary {
+    -fx-background-color: #246024;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 50;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #2c7a2c;
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-color: #246024;
+    -fx-border-width: 3;
+    -fx-border-radius: 50;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #2c7a2c;
+    -fx-background-radius: 50;
+    -fx-border-width: 0;    
+}
+
+.error {
+    -fx-border-color: #ff0000;
+    -fx-border-width: 3;
+    -fx-border-radius: 5;
+    -fx-padding: 2;
+}
+
+.error-border{
+    -fx-border-color: #ff0000;
+    -fx-border-width: 3;
+    -fx-border-radius: 2;
+}
