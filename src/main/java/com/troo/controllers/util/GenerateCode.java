@@ -1,6 +1,5 @@
 // By: Suchir
 // Sprint: 3
-
 package com.troo.controllers.util;
 
 public class GenerateCode {
@@ -8,14 +7,18 @@ public class GenerateCode {
     // alphanumeric character code (Ju89lL5258K78LGrT7), they cannot be the same as
     // any of the other one in the other file (Transactions.txt)
 
-    // public int[] receiptCode() {
-    // int arr[];
-    // arr = new int[6];
-    // for (int i = 0; i < 6; i++) {
-    // arr[i] = (int) (9 * Math.random()) + 1;
-    // }
-    // return arr;
-    // }
+     public String receiptCode() {
+        String code = "";
+    
+        // Generate a random 6-digit code
+        for (int i = 0; i < 6; i++) {
+          code += (int)(9 * Math.random());  // add a random digit (0-9) to the code
+        }
+    
+        System.out.println(code);  // print the 6-digit code
+        return code;
+     }
+
 
     public static StringBuilder transactionCode() {
         char[] code = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
