@@ -8,14 +8,14 @@ public class GenerateCode {
     // alphanumeric character code (Ju89lL5258K78LGrT7), they cannot be the same as
     // any of the other one in the other file (Transactions.txt)
 
-    // public int[] receiptCode() {
-    // int arr[];
-    // arr = new int[6];
-    // for (int i = 0; i < 6; i++) {
-    // arr[i] = (int) (9 * Math.random()) + 1;
-    // }
-    // return arr;
-    // }
+     public int[] receiptCode() {
+     int arr[];
+     arr = new int[6];
+     for (int i = 0; i < 6; i++) {
+     arr[i] = (int) (9 * Math.random()) + 1;
+     }
+     return arr;
+     }
 
     public static StringBuilder transactionCode() {
         char[] code = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
