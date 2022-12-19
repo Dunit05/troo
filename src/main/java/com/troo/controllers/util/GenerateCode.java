@@ -7,7 +7,7 @@ public class GenerateCode {
     // alphanumeric character code (Ju89lL5258K78LGrT7), they cannot be the same as
     // any of the other one in the other file (Transactions.txt)
 
-     public String receiptCode() {
+    public String receiptCode() {
         String code = "";
     
         // Generate a random 6-digit code
@@ -32,10 +32,5 @@ public class GenerateCode {
         return alphaCode;
     }
 
-    public static void checkCode() {
-        // check if the code is in the file
-        // if it is, generate a new one
-        // if it isn't, return the code
-    }
 
 }
