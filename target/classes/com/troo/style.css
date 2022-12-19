@@ -64,5 +64,10 @@
 
 .dark-textField {
     -fx-text-fill: #fff;
-    -fx-background-color: #1e1e1e
+    -fx-background-color: #1e1e1e;
+}
+
+.showPassword-text {
+    -fx-prompt-text-fill: black;
+    -fx-opacity: 1;
 }

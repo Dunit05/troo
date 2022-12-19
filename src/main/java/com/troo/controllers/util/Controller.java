@@ -32,12 +32,13 @@ public class Controller {
     public static void showPassword(PasswordField passwordField) {
         passwordField.setPromptText(passwordField.getText());
         passwordField.setText("");
-        passwordField.setDisable(true);
+        passwordField.getStyleClass().add("showPassword-text");
+        // passwordField.setDisable(true);
     }
 
     public static void hidePassword(PasswordField passwordField) {
         passwordField.setText(passwordField.getPromptText());
         passwordField.setPromptText("");
-        passwordField.setDisable(false);
+        // passwordField.setDisable(false);
     }
 }

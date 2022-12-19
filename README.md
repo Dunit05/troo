@@ -87,3 +87,5 @@ To run this project, you will need to add the following environment variables to
 `GOOGLE_MAPS_API_KEY`
 
 `SENDGRID_API_KEY`
+
+`FROM_EMAIL`
