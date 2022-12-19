@@ -12,50 +12,78 @@ Our app will be able to process payments and issue the user a transactional rece
 
 ## Authors
 
-- [Tommy D.](https://www.furot.tech)
+- [Tommy D.](https://www.tdmwebsolutions.com/team/tommy)
 - [Andrew Evans](https://www.furot.tech)
 - [Suchir Ladda](https://www.furot.tech)
 
 ## Features
 
-- Login or Sign up (Authentication)
+- Login and Sign up (Authentication)
 
 ## API Reference
 
-#### Get all items
+#### Send Email
 
 ```http
-  GET /api/items
+  POST SENDGRID API
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+| Parameter          | Type     | Description                |
+| :----------------- | :------- | :------------------------- |
+| `SENDGRID_API_KEY` | `string` | **Required**. Your API key |
+| `To`               | `string` | **Required**. To email     |
+| `From`             | `string` | **Required**. From Email   |
+| `Subject`          | `string` | Subject                    |
+| `Content`          | `string` | Email Content              |
 
 #### Get item
 
 ```http
-  GET /api/items/${id}
+  POST https://maps.googleapis.com/maps/api/place/autocomplete/json
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
+| Parameter             | Type     | Description                |
+| :-------------------- | :------- | :------------------------- |
+| `GOOGLE_MAPS_API_KEY` | `string` | **Required**. Your API key |
+| `Text Address`        | `string` | **Required**. Text Address |
+| `UUID`                | `string` | **Required**. Random UUID  |
 
 ## Run Locally
 
 Clone the project
 
 ```
-  git clone https://link-to-project
+  git clone https://github.com/Dunit05/troo.git
 ```
 
 ## Files (Data)
 
-- Data is stored int src/main/resources/com/troo/data/FileName.txt
+- User data is stored in src/main/resources/com/troo/data/users.txt
 - Password are hashed for maximum security
-- User data is stored as follows: email,password,userId,firstName,lastName,phone,address
+- User data is stored as follows:
+
+```
+[Email:
+Password:
+First Name:
+Last Name:
+Phone:
+Address:]
+```
+
+- Transaction data is store in src/main/resources/com/troo/data/transactions.txt
+- Transaction data from successful transactions are stored as follows
+
+```
+[Account:
+Transaction:
+Receipt:]
+```
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`GOOGLE_MAPS_API_KEY`
+
+`SENDGRID_API_KEY`

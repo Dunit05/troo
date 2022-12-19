@@ -21,7 +21,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -40,7 +43,13 @@ public class Authentication {
     private Label errorLabel;
 
     @FXML
+    private Button showPasswordButton;
+
+    @FXML
     private ListView<String> addressList;
+
+    @FXML
+    private CheckBox darkModeCheckBox;
 
     // Get a random UUID for the adddress autocomplete (to increase security & add
     // session)
@@ -199,4 +208,47 @@ public class Authentication {
         });
     }
 
+    // Show password method, takes an MouseEvent lisenener as a parameter
+    public void showPassword(MouseEvent event) {
+        // Set the passwordField to show the password
+        Controller.showPassword(passwordField);
+    }
+
+    // Hide password method, takes an MouseEvent lisenener as a parameter
+    public void hidePassword(MouseEvent event) {
+        // Set the passwordField to hide the password
+        Controller.hidePassword(passwordField);
+    }
+
+    // Dark mode method, takes an ActionEvent lisenener as a parameter
+    public void setDarkModeLoginScreen(ActionEvent event) {
+        if (darkModeCheckBox.isSelected()) {
+            emailField.getStyleClass().add("dark-textField");
+            passwordField.getStyleClass().add("dark-textField");
+        } else {
+            emailField.getStyleClass().remove("dark-textField");
+            passwordField.getStyleClass().remove("dark-textField");
+        }
+    }
+
+    // Dark Mode method, takes an ActionEvent lisenener as a parameter
+    public void setDarkModeRegisterScreen(ActionEvent event) {
+        if (darkModeCheckBox.isSelected()) {
+            emailField.getStyleClass().add("dark-textField");
+            passwordField.getStyleClass().add("dark-textField");
+            firstNameField.getStyleClass().add("dark-textField");
+            lastNameField.getStyleClass().add("dark-textField");
+            phoneField.getStyleClass().add("dark-textField");
+            addressField.getStyleClass().add("dark-textField");
+            addressList.getStyleClass().add("dark-textField");
+        } else {
+            emailField.getStyleClass().remove("dark-textField");
+            passwordField.getStyleClass().remove("dark-textField");
+            firstNameField.getStyleClass().remove("dark-textField");
+            lastNameField.getStyleClass().remove("dark-textField");
+            phoneField.getStyleClass().remove("dark-textField");
+            addressField.getStyleClass().remove("dark-textField");
+            addressList.getStyleClass().remove("dark-textField");
+        }
+    }
 }
