@@ -1,12 +1,12 @@
 ![Logo](https://filose-mirror.000webhostapp.com/furot.png)
 
-# Troo by Furot
+# tróo by Furot
 
-Here at Troo, we aim to make food delivery as easy as a couple of clicks on your screen from the comfort of your home.
+Here at tróo, we aim to make food delivery as easy as a couple of clicks on your screen from the comfort of your home.
 
-Troo is a Greek food delivery app, serving Toronto and the GTA.
-Troo specializes in bringing Greek cuisine right to your doorstep, so you can focus on the things that matter most to you, and less on the preparation of your meals.
-Troo delivers to residential homes, as well as offices, schools, colleges and universities.
+tróo is a Greek food delivery app, serving Toronto and the GTA.
+tróo specializes in bringing Greek cuisine right to your doorstep, so you can focus on the things that matter most to you, and less on the preparation of your meals.
+tróo delivers to residential homes, as well as offices, schools, colleges and universities.
 The software will allow the user to order food from a certain restaurant listed in the app, they will be able to make the purchase and be able to track how long it will take for the food to be made and the time it will eventually take to get delivered to their desired address.
 Our app will be able to process payments and issue the user a transactional receipt.
 

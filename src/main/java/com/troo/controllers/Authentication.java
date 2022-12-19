@@ -51,7 +51,7 @@ public class Authentication {
     @FXML
     private CheckBox darkModeCheckBox;
 
-    // Get a random UUID for the adddress autocomplete (to increase security & add
+    // Get a random UUID for the address autocomplete (to increase security & add
     // session)
     private final UUID UUID_CODE = UUID.randomUUID();
 
@@ -84,9 +84,9 @@ public class Authentication {
         Controller.changeScene("/com/troo/screens/HomeScreen.fxml", event);
     }
 
-    // Register method, takes an ActionEvent lisenener as a parameter
+    // Register method, takes an ActionEvent listener as a parameter
     public void register(ActionEvent event) {
-        // Get the FXMLELements values and set them to the local variables
+        // Get the FXMLElements values and set them to the local variables
         String email = "", password = "", firstName = "", lastName = "", phone = "", address = "";
         Email emailSender = new Email();
         email = emailField.getText();
@@ -144,8 +144,8 @@ public class Authentication {
         }
 
         // Send the welcome email
-        emailSender.sendEmail(email, "Welcome to Troo, " + firstName + "!",
-                "Thank you for registering with Troo. We hope you enjoy your experience with us.");
+        emailSender.sendEmail(email, "Welcome to tróo, " + firstName + "!",
+                "Thank you for registering with tróo. We hope you enjoy your experience with us.");
 
         // Change the scene to the home screen
         Controller.changeScene("/com/troo/screens/HomeScreen.fxml", event);

@@ -71,7 +71,7 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
         Email from = new Email(dotenv.get("FROM_EMAIL"));
         String subject = "You Logged In";
         Content content = new Content("text/plain",
-                "You logged in to Troo, and your encypted password is: ");
+                "You logged in to tróo, and your encypted password is: ");
 
         // Create a new mail object, and request object, and attachment object, and byte
         // array
