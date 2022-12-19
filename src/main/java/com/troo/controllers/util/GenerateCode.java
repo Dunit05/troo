@@ -19,10 +19,10 @@ public class GenerateCode {
         return code;
      }
 
-
+     
+    //this method will generate an 18 digit alphanumeric code 
     public static StringBuilder transactionCode() {
         char[] code = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
-
         StringBuilder alphaCode = new StringBuilder();
 
         for (int i = 0; i < 18; i++) {
