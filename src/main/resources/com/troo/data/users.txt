@@ -10,3 +10,9 @@ First Name: Andrew
 Last Name: Evans
 Phone: 2899888335
 Address: 27 Peacock Crescent, Ajax, ON, Canada]
+[Email: suchir714@gmail.com
+Password: 3dfbc881c44a84a856b27acb151a80d2253e10328b6ebf8e8cea590a515cbd8b
+First Name: LeBron
+Last Name: James
+Phone: 1234567890
+Address: 10 Dover Street, London, UK]
