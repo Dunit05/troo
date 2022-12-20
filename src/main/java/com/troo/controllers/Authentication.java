@@ -12,7 +12,6 @@ import com.troo.controllers.util.AddressAutocomplete;
 import com.troo.controllers.util.Controller;
 import com.troo.controllers.util.Email;
 import com.troo.controllers.util.Error;
-import com.troo.controllers.util.GenerateCode;
 import com.troo.controllers.util.Encrypt;
 import com.troo.controllers.util.ValidateForm;
 
@@ -162,9 +161,6 @@ public class Authentication {
     // lisenener as a parameter
     public void back(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Login.fxml", event);
-        GenerateCode code = new GenerateCode();
-        System.out.println(code.receiptCode());
-        System.out.println(code.transactionCode());
     }
 
     // Autocomplete address method, takes an KeyEvent lisenener as a parameter

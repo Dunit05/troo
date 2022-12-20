@@ -37,7 +37,8 @@
 .btn-secondary:hover {
     -fx-background-color: #166ac0;
     -fx-background-radius: 50;
-    -fx-border-width: 0;    
+    -fx-border-width: 3;    
+    -fx-border-color: #166ac0;
 }
 
 .btn-showPassword {
