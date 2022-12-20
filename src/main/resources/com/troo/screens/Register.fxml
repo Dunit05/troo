@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.PasswordField?>
@@ -13,103 +15,216 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" styleClass="bg" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.troo.controllers.Authentication">
+<HBox alignment="CENTER" fillHeight="false" prefHeight="800.0" prefWidth="1000.0" styleClass="bg" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.troo.controllers.Authentication">
    <children>
-      <AnchorPane prefHeight="800.0" prefWidth="1000.0">
+      <AnchorPane prefHeight="651.0" prefWidth="670.0" styleClass="dark">
          <children>
-            <AnchorPane layoutX="165.0" layoutY="61.0" prefHeight="651.0" prefWidth="670.0" styleClass="dark">
+            <VBox alignment="TOP_CENTER" prefHeight="740.0" prefWidth="670.0">
                <children>
-                  <Label alignment="CENTER" layoutX="81.0" layoutY="293.0" prefHeight="30.0" prefWidth="74.0" text="Email*" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="TOP_LEFT" layoutX="226.0" layoutY="171.0" prefHeight="41.0" prefWidth="212.0" text="Register Now!" textFill="WHITE">
+                  <HBox alignment="CENTER" prefHeight="155.0" prefWidth="670.0">
+                     <children>
+                        <ImageView fitHeight="155.0" fitWidth="349.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/logo-transparent.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Label alignment="TOP_LEFT" prefHeight="41.0" prefWidth="212.0" text="Register Now!" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="35.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="358.0" layoutY="372.0" prefHeight="30.0" prefWidth="117.0" text="Password*" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri" size="25.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="emailField" layoutX="81.0" layoutY="331.0" prefHeight="26.0" prefWidth="238.0" />
-                  <PasswordField fx:id="passwordField" layoutX="362.0" layoutY="410.0" prefHeight="26.0" prefWidth="238.0" />
-                  <Button fx:id="register" layoutX="359.0" layoutY="554.0" mnemonicParsing="false" onAction="#register" prefHeight="46.0" prefWidth="238.0" styleClass="btn-primary" text="Register" />
-                  <Label id="error" fx:id="errorLabel" alignment="TOP_LEFT" layoutX="119.0" layoutY="142.0" prefHeight="26.0" prefWidth="433.0" textFill="WHITE">
+                  <Label id="error" fx:id="errorLabel" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="433.0" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="15.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
                   </Label>
-                  <Label alignment="CENTER" layoutX="213.0" layoutY="614.0" prefHeight="18.0" prefWidth="238.0" text="Need help? Email troo@furot.tech" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri" size="15.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="155.0" fitWidth="349.0" layoutX="180.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/logo-transparent.png" />
-                     </image>
-                  </ImageView>
-                  <Label alignment="CENTER" layoutX="358.0" layoutY="210.0" prefHeight="30.0" prefWidth="124.0" text="Last Name*" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri" size="25.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="lastNameField" layoutX="359.0" layoutY="249.0" prefHeight="26.0" prefWidth="238.0" />
-                  <Label alignment="CENTER" layoutX="357.0" layoutY="294.0" prefHeight="30.0" prefWidth="176.0" text="Phone Number*" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri" size="25.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="phoneField" layoutX="362.0" layoutY="331.0" prefHeight="26.0" prefWidth="238.0" />
-                  <Label alignment="CENTER" layoutX="81.0" layoutY="372.0" prefHeight="30.0" prefWidth="98.0" text="Address*" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri" size="25.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="addressField" layoutX="81.0" layoutY="410.0" onKeyPressed="#findAddress" prefHeight="26.0" prefWidth="238.0" />
-                  <Label alignment="CENTER" layoutX="81.0" layoutY="211.0" prefHeight="30.0" prefWidth="124.0" text="First Name*" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri" size="25.0" />
-                     </font>
-                  </Label>
-                  <ListView fx:id="addressList" layoutX="81.0" layoutY="444.0" prefHeight="94.0" prefWidth="238.0" />
-                  <Button layoutX="81.0" layoutY="553.0" mnemonicParsing="false" onAction="#back" prefHeight="46.0" prefWidth="238.0" styleClass="btn-secondary" text="Back" />
-                  <TextField fx:id="firstNameField" layoutX="81.0" layoutY="250.0" prefHeight="25.0" prefWidth="238.0" />
-                  <VBox layoutX="363.0" layoutY="442.0" prefHeight="101.0" prefWidth="238.0">
+                  <VBox prefHeight="286.0" prefWidth="670.0">
                      <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 8 characters">
+                        <HBox prefHeight="100.0" prefWidth="0.0">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="275.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="124.0" text="First Name*" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="firstNameField" prefHeight="25.0" prefWidth="238.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="100.0" prefWidth="275.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="124.0" text="Last Name*" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="lastNameField" prefHeight="26.0" prefWidth="238.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="40.0" right="40.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="0.0">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="275.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="74.0" text="Email*" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="emailField" prefHeight="26.0" prefWidth="238.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="100.0" prefWidth="275.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="176.0" text="Phone Number*" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="phoneField" prefHeight="26.0" prefWidth="238.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="40.0" right="40.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="50.0" layoutY="92.0" prefHeight="199.0" prefWidth="590.0">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="275.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="98.0" text="Address*" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="addressField" onKeyPressed="#findAddress" prefHeight="26.0" prefWidth="238.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <ListView fx:id="addressList" prefHeight="99.0" prefWidth="275.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="100.0" prefWidth="275.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="117.0" text="Password*" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="238.0" />
+                                    <Button fx:id="showPasswordButton" mnemonicParsing="false" onMousePressed="#showPassword" onMouseReleased="#hidePassword" styleClass="btn-showPassword" text="Show Password">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <CheckBox fx:id="darkModeCheckBox" mnemonicParsing="false" onAction="#setDarkModeRegisterScreen" text="Dark Mode" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri Italic" size="14.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <VBox prefHeight="101.0" prefWidth="238.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 8 characters">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 1 uppercase letter">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 1 lowercase letter" wrappingWidth="149.49365234375">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 1 number">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 1 special character">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="40.0" right="40.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#back" prefHeight="46.0" prefWidth="238.0" styleClass="btn-secondary" text="Back">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="register" mnemonicParsing="false" onAction="#register" prefHeight="46.0" prefWidth="238.0" styleClass="btn-primary" text="Register">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="Need help? Email troo@furot.tech" textFill="WHITE">
                            <font>
-                              <Font size="13.0" />
+                              <Font name="Calibri" size="15.0" />
                            </font>
-                        </Text>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 1 uppercase letter">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Text>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 1 lowercase letter" wrappingWidth="149.49365234375">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Text>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 1 number">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Text>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="At least 1 special character">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Text>
+                        </Label>
                      </children>
                   </VBox>
                </children>
-            </AnchorPane>
+            </VBox>
          </children>
       </AnchorPane>
    </children>
+   <padding>
+      <Insets bottom="50.0" top="50.0" />
+   </padding>
 </HBox>

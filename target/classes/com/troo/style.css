@@ -11,7 +11,7 @@
 }
 
 .btn-primary {
-    -fx-background-color: #246024;
+    -fx-background-color: #12569b;
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
@@ -20,7 +20,7 @@
 }
 
 .btn-primary:hover {
-    -fx-background-color: #2c7a2c;
+    -fx-background-color: #166ac0;
 }
 
 .btn-secondary {
@@ -29,15 +29,24 @@
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-padding: 10 20;
-    -fx-border-color: #246024;
+    -fx-border-color: #12569b;
     -fx-border-width: 3;
     -fx-border-radius: 50;
 }
 
 .btn-secondary:hover {
-    -fx-background-color: #2c7a2c;
+    -fx-background-color: #166ac0;
     -fx-background-radius: 50;
     -fx-border-width: 0;    
+}
+
+.btn-showPassword {
+    -fx-background-color: #12569b;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 20;
+    -fx-background-radius: 50;
 }
 
 .error {
@@ -51,4 +60,14 @@
     -fx-border-color: #ff0000;
     -fx-border-width: 3;
     -fx-border-radius: 2;
+}
+
+.dark-textField {
+    -fx-text-fill: #fff;
+    -fx-background-color: #1e1e1e;
+}
+
+.showPassword-text {
+    -fx-prompt-text-fill: black;
+    -fx-opacity: 1;
 }

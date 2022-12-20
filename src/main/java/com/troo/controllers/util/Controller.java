@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 // Class to change scenes
@@ -28,4 +29,16 @@ public class Controller {
         }
     }
 
+    public static void showPassword(PasswordField passwordField) {
+        passwordField.setPromptText(passwordField.getText());
+        passwordField.setText("");
+        passwordField.getStyleClass().add("showPassword-text");
+        // passwordField.setDisable(true);
+    }
+
+    public static void hidePassword(PasswordField passwordField) {
+        passwordField.setText(passwordField.getPromptText());
+        passwordField.setPromptText("");
+        // passwordField.setDisable(false);
+    }
 }
