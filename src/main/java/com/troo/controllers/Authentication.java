@@ -162,6 +162,9 @@ public class Authentication {
     // lisenener as a parameter
     public void back(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Login.fxml", event);
+        GenerateCode code = new GenerateCode();
+        System.out.println(code.receiptCode());
+        System.out.println(code.transactionCode());
     }
 
     // Autocomplete address method, takes an KeyEvent lisenener as a parameter
