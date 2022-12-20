@@ -21,9 +21,8 @@ public class App extends Application {
             Scene scene = new Scene(root);
             Image icon = new Image(getClass().getResourceAsStream("/com/troo/img/icon.png"));
             stage.getIcons().add(icon);
-            stage.setTitle("Troo");
+            stage.setTitle("tróo");
             stage.setScene(scene);
-            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());

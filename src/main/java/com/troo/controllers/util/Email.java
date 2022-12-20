@@ -5,6 +5,7 @@ package com.troo.controllers.util;
 
 import com.sendgrid.Method;
 import com.sendgrid.Request;
+import com.sendgrid.Response;
 import com.sendgrid.SendGrid;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Attachments;
@@ -40,7 +41,7 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
     public void sendEmail(String email, String emailSubject, String message) {
         // Create a new email object
         Email to = new Email(email);
-        Email from = new Email("troo@furot.tech");
+        Email from = new Email(dotenv.get("FROM_EMAIL"));
         String subject = emailSubject;
         Content content = new Content("text/plain", message);
 
@@ -53,6 +54,11 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
             request.setMethod(Method.POST);
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
+            Response response = sg.api(request);
+            // For debugging purposes
+            System.out.println(response.getStatusCode());
+            System.out.println(response.getBody());
+            System.out.println(response.getHeaders());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -62,10 +68,10 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
     public void sendEmailWithAttachment(String email, String path) {
         // Create a new email object
         Email to = new Email(email);
-        Email from = new Email("troo@furot.tech");
+        Email from = new Email(dotenv.get("FROM_EMAIL"));
         String subject = "You Logged In";
         Content content = new Content("text/plain",
-                "You logged in to Troo, and your encypted password is: ");
+                "You logged in to tróo, and your encypted password is: ");
 
         // Create a new mail object, and request object, and attachment object, and byte
         // array
@@ -96,6 +102,11 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
             request.setMethod(Method.POST);
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
+            Response response = sg.api(request);
+            // For debugging purposes
+            System.out.println(response.getStatusCode());
+            System.out.println(response.getBody());
+            System.out.println(response.getHeaders());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
