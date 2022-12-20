@@ -132,10 +132,11 @@ public class ValidateForm {
                     Error.removeError(errorLabel);
                     Error.removeTextFieldErrorBorder(textField);
                     Error.removePasswordFieldErrorBorder(passwordField);
+                    br.close();
                     return true;
                 }
             }
-            br.close(); // This should close the reader
+            br.close();
             // If the email and password do not match, set the error label and textfield
             // error
             Error.setError("Email or password is incorrect", errorLabel);
@@ -172,10 +173,11 @@ public class ValidateForm {
                     Error.setError("Email and password must be unique", errorLabel);
                     Error.setTextFieldErrorBorder(phoneTextField);
                     Error.setTextFieldErrorBorder(emailTextField);
+                    br.close();
                     return false;
                 }
             }
-            br.close(); // This should close the reader
+            br.close();
             // If the email and phone do not match, remove the error label and textfield
             // error
             Error.removeError(errorLabel);

@@ -20,7 +20,9 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
 // Class to create a QR Code
 public class QRCode {
+    // Source:
     // https://www.digitalocean.com/community/tutorials/java-qr-code-generator-zxing-example
+    // APA
 
     // Create QR Code, takes in file name and text to encode
     public static void createQRImage(File qrFile, String qrCodeText) {

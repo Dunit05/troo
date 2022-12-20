@@ -8,7 +8,7 @@ public class GenerateCode {
     // 2 return functions. 1 to generate a 6 digit code, and 1 to generate 18
     // alphanumeric character code (Ju89lL5258K78LGrT7), they cannot be the same as
     // any of the other one in the other file (Transactions.txt)
-    // "C:/Users/suchi/OneDrive/Documents/troo/src/main/resources/com/troo/data/transactions.txt"
+    // "src/main/resources/com/troo/data/transactions.txt"
 
     public String receiptCode() {
         // declare variables
@@ -42,13 +42,14 @@ public class GenerateCode {
                     // if code is unique then code is returned
                     else {
                         sameNum = true;
+                        br.close(); // should close
                         return code;
                     }
                     line = br.readLine();
                 }
             } while (!sameNum);
             // closing br
-            br.close();// should close
+            br.close();
         } catch (IOException err) {
             System.out.println("Error reading from the file");
             err.printStackTrace();
@@ -96,6 +97,7 @@ public class GenerateCode {
                         sameTransCode = false;
                     } else {
                         sameTransCode = true;
+                        br.close(); // should close
                         return alphaCode;
                     }
                 }
