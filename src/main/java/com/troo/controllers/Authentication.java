@@ -12,6 +12,7 @@ import com.troo.controllers.util.AddressAutocomplete;
 import com.troo.controllers.util.Controller;
 import com.troo.controllers.util.Email;
 import com.troo.controllers.util.Error;
+import com.troo.controllers.util.GenerateCode;
 import com.troo.controllers.util.Encrypt;
 import com.troo.controllers.util.ValidateForm;
 
@@ -226,9 +227,11 @@ public class Authentication {
         if (darkModeCheckBox.isSelected()) {
             emailField.getStyleClass().add("dark-textField");
             passwordField.getStyleClass().add("dark-textField");
+            passwordField.getStyleClass().add("showPassword-text-dark");
         } else {
             emailField.getStyleClass().remove("dark-textField");
             passwordField.getStyleClass().remove("dark-textField");
+            passwordField.getStyleClass().remove("showPassword-text-dark");
         }
     }
 
@@ -242,6 +245,7 @@ public class Authentication {
             phoneField.getStyleClass().add("dark-textField");
             addressField.getStyleClass().add("dark-textField");
             addressList.getStyleClass().add("dark-textField");
+            passwordField.getStyleClass().add("showPassword-text-dark");
         } else {
             emailField.getStyleClass().remove("dark-textField");
             passwordField.getStyleClass().remove("dark-textField");
@@ -250,6 +254,7 @@ public class Authentication {
             phoneField.getStyleClass().remove("dark-textField");
             addressField.getStyleClass().remove("dark-textField");
             addressList.getStyleClass().remove("dark-textField");
+            passwordField.getStyleClass().remove("showPassword-text-dark");
         }
     }
 }

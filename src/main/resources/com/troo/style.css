@@ -65,9 +65,23 @@
 .dark-textField {
     -fx-text-fill: #fff;
     -fx-background-color: #1e1e1e;
+    -fx-control-inner-background: #1e1e1e;
+    -fx-scroll-bar: #1e1e1e;
+    -fx-thumb: #1e1e1e;
+}
+
+.dark-textField .scroll-bar {
+    -fx-background-color: #1e1e1e;
+    -fx-scroll-bar: #1e1e1e;
+    -fx-thumb: #1e1e1e;
 }
 
 .showPassword-text {
     -fx-prompt-text-fill: black;
+    -fx-opacity: 1;
+}
+
+.showPassword-text-dark {
+    -fx-prompt-text-fill: white;
     -fx-opacity: 1;
 }

@@ -1,4 +1,4 @@
-// By: Tommy
+// By: Suchir
 // Sprint: 2
 
 package com.troo.controllers.util;
@@ -33,7 +33,7 @@ public class Encrypt {
             // Return the hash string
             return hash;
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Error hashing password");
         }
         return "";
     }
