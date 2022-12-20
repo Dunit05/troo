@@ -4,9 +4,3 @@ First Name: Furot
 Last Name: Admin
 Phone: 1234567890
 Address: 1234 Main St]
-[Email: ytaevans7@gmail.com
-Password: 98bc3011c1f529ba23bb815400251cf2e78ebd051a090182852949723abf42fb
-First Name: Andrew
-Last Name: Evans
-Phone: 2899888335
-Address: 27 Peacock Crescent, Ajax, ON, Canada]
