@@ -4,3 +4,9 @@ First Name: Furot
 Last Name: Admin
 Phone: 1234567890
 Address: 1234 Main St]
+[Email: s201082548@gmail.com
+Password: a109e36947ad56de1dca1cc49f0ef8ac9ad9a7b1aa0df41fb3c4cb73c1ff01ea
+First Name: suchir
+Last Name: ladda
+Phone: 1234567890
+Address: J. Clarke Richardson Collegiate, Harwood Avenue North, Ajax, ON, Canada]
