@@ -58,14 +58,56 @@ public class GenerateCode {
 
     //this method will generate an 18 digit alphanumeric code 
     public static String transactionCode() {
+        //creating code array for every possible character that can be in the code
         char[] code = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
+        //declaring and initializing variables
         String alphaCode ="";
+        String line = "";
+        boolean sameTransCode = false;
+        int index;
 
-        for (int i = 0; i < 18; i++) {
-            int index = (int) (62 * Math.random());
-            alphaCode+=(code[index]);
+        
+        try{
+            //creating file reader and file writer
+            FileReader fr = new FileReader("C:/Users/suchi/OneDrive/Documents/troo/src/main/resources/com/troo/data/transactions.txt");
+            BufferedReader br = new BufferedReader(fr);
+            //do while loop will keep repeating if code generated is the same as a previous code
+            do{
+
+                //for loop to get random index from array and add it to the string
+                for (int i = 0; i < 18; i++) {
+                    index = (int) (62 * Math.random());
+                    alphaCode+=(code[index]);
+                }
+
+                //reading first line
+                line = br.readLine();
+
+                //while loop to keep reading all lines until null
+                while(line!=null){
+                    //read second line and substring it to get code
+                    line = br.readLine();
+                    line = line.substring(12);
+
+                    //comparing previos codes to code that was jsut generated
+                    if(alphaCode.equals(line)){
+                        sameTransCode = false;
+                    }
+                    else{
+                        sameTransCode = true;
+                        return alphaCode;
+                    }
+                }
+
+
+            }while(!sameTransCode);
+            br.close();//should close
+        }catch(IOException e){
+            System.out.println("Error read from file");
         }
+        
         return alphaCode;
+
     }
 
 
