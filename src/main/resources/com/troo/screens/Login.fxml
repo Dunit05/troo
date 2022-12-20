@@ -95,7 +95,7 @@
                      <children>
                         <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" prefHeight="46.0" prefWidth="310.0" styleClass="btn-secondary" text="Login">
                            <VBox.margin>
-                              <Insets bottom="5.0" />
+                              <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
                         </Button>
                         <Label alignment="CENTER" prefHeight="17.0" prefWidth="29.0" text="Or" textFill="WHITE">
@@ -117,6 +117,9 @@
                      <font>
                         <Font name="Calibri" size="15.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
                   </Label>
                </children>
             </VBox>
