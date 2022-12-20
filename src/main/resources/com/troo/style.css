@@ -37,7 +37,8 @@
 .btn-secondary:hover {
     -fx-background-color: #166ac0;
     -fx-background-radius: 50;
-    -fx-border-width: 0;    
+    -fx-border-width: 3;    
+    -fx-border-color: #166ac0;
 }
 
 .btn-showPassword {
@@ -65,9 +66,23 @@
 .dark-textField {
     -fx-text-fill: #fff;
     -fx-background-color: #1e1e1e;
+    -fx-control-inner-background: #1e1e1e;
+    -fx-scroll-bar: #1e1e1e;
+    -fx-thumb: #1e1e1e;
+}
+
+.dark-textField .scroll-bar {
+    -fx-background-color: #1e1e1e;
+    -fx-scroll-bar: #1e1e1e;
+    -fx-thumb: #1e1e1e;
 }
 
 .showPassword-text {
     -fx-prompt-text-fill: black;
+    -fx-opacity: 1;
+}
+
+.showPassword-text-dark {
+    -fx-prompt-text-fill: white;
     -fx-opacity: 1;
 }

@@ -220,14 +220,17 @@ public class Authentication {
         Controller.hidePassword(passwordField);
     }
 
+    // Andrew
     // Dark mode method, takes an ActionEvent lisenener as a parameter
     public void setDarkModeLoginScreen(ActionEvent event) {
         if (darkModeCheckBox.isSelected()) {
             emailField.getStyleClass().add("dark-textField");
             passwordField.getStyleClass().add("dark-textField");
+            passwordField.getStyleClass().add("showPassword-text-dark");
         } else {
             emailField.getStyleClass().remove("dark-textField");
             passwordField.getStyleClass().remove("dark-textField");
+            passwordField.getStyleClass().remove("showPassword-text-dark");
         }
     }
 
@@ -241,6 +244,7 @@ public class Authentication {
             phoneField.getStyleClass().add("dark-textField");
             addressField.getStyleClass().add("dark-textField");
             addressList.getStyleClass().add("dark-textField");
+            passwordField.getStyleClass().add("showPassword-text-dark");
         } else {
             emailField.getStyleClass().remove("dark-textField");
             passwordField.getStyleClass().remove("dark-textField");
@@ -249,6 +253,7 @@ public class Authentication {
             phoneField.getStyleClass().remove("dark-textField");
             addressField.getStyleClass().remove("dark-textField");
             addressList.getStyleClass().remove("dark-textField");
+            passwordField.getStyleClass().remove("showPassword-text-dark");
         }
     }
 }

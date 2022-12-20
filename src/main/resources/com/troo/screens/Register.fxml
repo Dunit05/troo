@@ -128,7 +128,7 @@
                                           <Insets bottom="10.0" />
                                        </VBox.margin>
                                     </TextField>
-                                    <ListView fx:id="addressList" prefHeight="99.0" prefWidth="275.0" />
+                                    <ListView fx:id="addressList" prefHeight="99.0" prefWidth="275.0" styleClass="addressList" />
                                  </children>
                                  <HBox.margin>
                                     <Insets right="20.0" />
@@ -151,6 +151,9 @@
                                        <font>
                                           <Font name="Calibri Italic" size="14.0" />
                                        </font>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
                                     </CheckBox>
                                     <VBox prefHeight="101.0" prefWidth="238.0">
                                        <children>
@@ -216,6 +219,9 @@
                            <font>
                               <Font name="Calibri" size="15.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="10.0" />
+                           </VBox.margin>
                         </Label>
                      </children>
                   </VBox>
