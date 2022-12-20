@@ -220,6 +220,7 @@ public class Authentication {
         Controller.hidePassword(passwordField);
     }
 
+    // Andrew
     // Dark mode method, takes an ActionEvent lisenener as a parameter
     public void setDarkModeLoginScreen(ActionEvent event) {
         if (darkModeCheckBox.isSelected()) {
