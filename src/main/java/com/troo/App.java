@@ -1,6 +1,6 @@
 // Names: Tommy, Andrew, Suchir
 // Date due: Janurary, 18th, 2023
-// Troo by Furot
+// tróo by Furot
 
 package com.troo;
 
