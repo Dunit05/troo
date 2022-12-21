@@ -12,6 +12,7 @@ import com.troo.controllers.util.AddressAutocomplete;
 import com.troo.controllers.util.Controller;
 import com.troo.controllers.util.Email;
 import com.troo.controllers.util.Error;
+import com.troo.controllers.util.GenerateCode;
 import com.troo.controllers.util.Encrypt;
 import com.troo.controllers.util.ValidateForm;
 

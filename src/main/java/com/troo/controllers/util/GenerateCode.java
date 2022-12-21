@@ -15,6 +15,7 @@ public class GenerateCode {
         String code = "";
         String line = "";
         boolean sameNum = false;
+        final int DIGIT_CODE_LIMIT = 6;
 
         try {
             // create file reader and buffered reader
@@ -23,7 +24,7 @@ public class GenerateCode {
 
             do {
                 // generate 6 digit code
-                for (int i = 0; i < 6; i++) {
+                for (int i = 0; i < DIGIT_CODE_LIMIT; i++) {
                     code += (int) (9 * Math.random()); // add a random digit (0-9) to the code
                 }
                 // read first line in file
@@ -67,6 +68,8 @@ public class GenerateCode {
         String line = "";
         boolean sameTransCode = false;
         int index;
+        final int CHAR_LIMIT = 18;
+        final int ARRAY_SIZE = code.length;
 
         try {
             // creating file reader and file writer
@@ -78,8 +81,8 @@ public class GenerateCode {
             do {
 
                 // for loop to get random index from array and add it to the string
-                for (int i = 0; i < 18; i++) {
-                    index = (int) (62 * Math.random());
+                for (int i = 0; i < CHAR_LIMIT; i++) {
+                    index = (int) (ARRAY_SIZE * Math.random());
                     alphaCode += (code[index]);
                 }
 
