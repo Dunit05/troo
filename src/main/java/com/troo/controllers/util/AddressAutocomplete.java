@@ -21,6 +21,7 @@ public class AddressAutocomplete {
         Dotenv dotenv = Dotenv.load();
 
         // https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Paris&types=geocode&key=YOUR_API_KEY"
+
         // Create an HTTPs request to maps.googleapis.com to predict the address
         OkHttpClient client = new OkHttpClient();
 
@@ -44,12 +45,12 @@ public class AddressAutocomplete {
         // Try to send the request
         try {
             Response response = client.newCall(request).execute();
-
             // Return the response
             return response.body().string();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Return an empty string if the request fails
         return "";
     }
 }

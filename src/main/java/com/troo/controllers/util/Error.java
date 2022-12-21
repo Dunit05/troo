@@ -39,5 +39,4 @@ public class Error {
     public static void removePasswordFieldErrorBorder(TextField textField) {
         textField.getStyleClass().remove("error-border");
     }
-
 }
