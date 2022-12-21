@@ -189,6 +189,5 @@ public class ValidateForm {
             Error.setError("There was an error", errorLabel);
         }
         return false;
-
     }
 }

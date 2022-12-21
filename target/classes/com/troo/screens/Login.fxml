@@ -110,13 +110,16 @@
                         </Button>
                      </children>
                      <padding>
-                        <Insets bottom="30.0" top="20.0" />
+                        <Insets bottom="20.0" top="20.0" />
                      </padding>
                   </VBox>
                   <Label alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="Need help? Email troo@furot.tech" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="15.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="12.0" />
+                     </VBox.margin>
                   </Label>
                </children>
             </VBox>

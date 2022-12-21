@@ -29,16 +29,18 @@ public class Controller {
         }
     }
 
+    // Show password method, takes in a passwordfield as a parameter
     public static void showPassword(PasswordField passwordField) {
+        // Set the prompt text to the password field text
         passwordField.setPromptText(passwordField.getText());
         passwordField.setText("");
         passwordField.getStyleClass().add("showPassword-text");
-        // passwordField.setDisable(true);
     }
 
+    // Hide password method, takes in a passwordfield as a parameter
     public static void hidePassword(PasswordField passwordField) {
+        // Set the password field text to the prompt text
         passwordField.setText(passwordField.getPromptText());
         passwordField.setPromptText("");
-        // passwordField.setDisable(false);
     }
 }

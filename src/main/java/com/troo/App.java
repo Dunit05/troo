@@ -15,6 +15,7 @@ import java.io.IOException;
 public class App extends Application {
     // Override the start method in the Application class
     @Override
+    // Sets the stage and scene to the Login.fxml file
     public void start(Stage stage) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/com/troo/screens/Login.fxml"));
