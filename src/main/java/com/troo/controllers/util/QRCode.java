@@ -58,11 +58,3 @@ public class QRCode {
         }
     }
 }
-
-// ----- To be used for generateing the QR code
-// String qrCodeText = GenerateCode.transactionCode().toString();
-// String filePath = "JD.png";
-// File qrFile = new File(filePath);
-// QRCode.createQRImage(qrFile, qrCodeText);
-// System.out.println("DONE");
-// GenerateReceipt.generateReceipt();

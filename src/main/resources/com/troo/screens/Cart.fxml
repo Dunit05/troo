@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Name: Tommy -->
+<!-- Sprint:  -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.troo.controllers.Cart">
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="1000.0">
+         <children>
+            <VBox alignment="BOTTOM_RIGHT" prefHeight="800.0" prefWidth="60.0" styleClass="sideBar">
+               <children>
+                  <ImageView fitHeight="62.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icon-transparent.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <HBox prefHeight="752.0" prefWidth="912.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="35.0">
+               <children>
+                  <VBox prefHeight="752.0" prefWidth="914.0">
+                     <children>
+                        <Label prefHeight="38.0" prefWidth="218.0" text="View your cart...">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="30.0" layoutY="125.0" text="View your cart ietms below">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ListView fx:id="cartList" prefHeight="391.0" prefWidth="872.0">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </ListView>
+                        <Button mnemonicParsing="false" onAction="#delete" prefHeight="24.0" prefWidth="139.0" styleClass="btn-primary" text="Delete Item">
+                           <VBox.margin>
+                              <Insets bottom="-20.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label prefHeight="6.0" prefWidth="420.0" text="* You can delete an item by clicking it and pressing delete">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="26.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="amount" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" prefHeight="20.0" prefWidth="884.0" text="Total:" textAlignment="RIGHT">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="subtotal" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" prefHeight="20.0" prefWidth="884.0" text="Total:" textAlignment="RIGHT">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="134.0" prefWidth="872.0">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                           <children>
+                              <Button fx:id="backButton" mnemonicParsing="false" prefHeight="54.0" prefWidth="253.0" styleClass="btn-primary" text="Back" />
+                              <Button layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#toCheckout" prefHeight="54.0" prefWidth="253.0" styleClass="btn-primary" text="Pay Now">
+                                 <HBox.margin>
+                                    <Insets left="200.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="893.0" text="Need help? Email troo@furot.tech" textAlignment="CENTER">
+                           <font>
+                              <Font name="Calibri" size="15.0" />
+                           </font>
+                        </Label>
+                        <CheckBox mnemonicParsing="false" prefHeight="31.0" prefWidth="166.0" text="Dark Mode">
+                           <font>
+                              <Font name="Calibri Italic" size="14.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

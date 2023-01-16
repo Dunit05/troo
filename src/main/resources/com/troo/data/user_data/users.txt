@@ -1,0 +1,12 @@
+[Email: dev@furot.tech
+Password: a8a86be97cfe43a43117ec9aed878cd2e0577035936fc2e8df455e2be3d4afda
+First Name: Furot
+Last Name: Admin
+Phone: 1234567890
+Address: 1234 Main St]
+[Email: tommy.05.tdm@gmail.com
+Password: c7691e5f204400067644e5b80eefbccfac309c91cff83b3d76ac6125980b8ec3
+First Name: Tommy
+Last Name: Michailidis
+Phone: 6479803959
+Address: J. Clarke Richardson Collegiate, Harwood Avenue North, Ajax, ON, Canada]

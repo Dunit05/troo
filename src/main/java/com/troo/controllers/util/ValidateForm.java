@@ -117,7 +117,7 @@ public class ValidateForm {
             PasswordField passwordField) {
         // Try to read the users.txt file
         try {
-            FileReader fr = new FileReader("src/main/resources/com/troo/data/users.txt");
+            FileReader fr = new FileReader("src/main/resources/com/troo/data/user_data/users.txt");
             BufferedReader br = new BufferedReader(fr);
             String line = "", emailLine = "", passwordLine = "";
             while ((line = br.readLine()) != null) {
@@ -158,7 +158,7 @@ public class ValidateForm {
             TextField phoneTextField) {
         // Try to read the users.txt file
         try {
-            FileReader fr = new FileReader("src/main/resources/com/troo/data/users.txt");
+            FileReader fr = new FileReader("src/main/resources/com/troo/data/user_data/users.txt");
             BufferedReader br = new BufferedReader(fr);
             String line = "", emailLine = "", phoneLine = "";
             while ((line = br.readLine()) != null) {

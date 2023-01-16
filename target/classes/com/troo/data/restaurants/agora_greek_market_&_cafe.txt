@@ -1,0 +1,35 @@
+--Data--
+5 Star
+Stylish, all-white nook offering coffee, house-baked breads & pastries plus grab-&-go Greek dishes.
+
+--Appetizers--
+[Avgolemono Soup
+12.00
+Traditional Greek soup with chicken, fresh herbs, egg, lemon juice, rice
+gluten-free
+1
+avgolemono-soup]
+
+--Entree--
+[Avgolemono Soup
+12.00
+Traditional Greek soup with chicken, fresh herbs, egg, lemon juice, rice
+gluten-free
+1
+avgolemono-soup]
+
+--Desserts--
+[Avgolemono Soup
+12.00
+Traditional Greek soup with chicken, fresh herbs, egg, lemon juice, rice
+gluten-free
+1
+avgolemono-soup]
+
+--Drinks--
+[Avgolemono Soup
+12.00
+Traditional Greek soup with chicken, fresh herbs, egg, lemon juice, rice
+gluten-free
+1
+avgolemono-soup]

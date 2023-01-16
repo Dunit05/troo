@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <!-- Name: Tommy -->
 <!-- Sprint: 2 -->
 
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -60,7 +61,7 @@
                                           <Font name="Calibri" size="25.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="firstNameField" prefHeight="25.0" prefWidth="238.0" />
+                                    <TextField fx:id="firstNameField" prefHeight="25.0" prefWidth="238.0" promptText="First Name" styleClass="textbox" />
                                  </children>
                                  <HBox.margin>
                                     <Insets right="20.0" />
@@ -73,7 +74,7 @@
                                           <Font name="Calibri" size="25.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="lastNameField" prefHeight="26.0" prefWidth="238.0" />
+                                    <TextField fx:id="lastNameField" prefHeight="26.0" prefWidth="238.0" promptText="Last Name" styleClass="textbox" />
                                  </children>
                                  <HBox.margin>
                                     <Insets left="20.0" />
@@ -93,7 +94,7 @@
                                           <Font name="Calibri" size="25.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="emailField" prefHeight="26.0" prefWidth="238.0" />
+                                    <TextField fx:id="emailField" prefHeight="26.0" prefWidth="238.0" promptText="Email" styleClass="textbox" />
                                  </children>
                                  <HBox.margin>
                                     <Insets right="20.0" />
@@ -106,7 +107,7 @@
                                           <Font name="Calibri" size="25.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="phoneField" prefHeight="26.0" prefWidth="238.0" />
+                                    <TextField fx:id="phoneField" prefHeight="26.0" prefWidth="238.0" promptText="Phone Number" styleClass="textbox" />
                                  </children>
                                  <HBox.margin>
                                     <Insets left="20.0" />
@@ -126,12 +127,16 @@
                                           <Font name="Calibri" size="25.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="addressField" onKeyPressed="#findAddress" prefHeight="26.0" prefWidth="238.0">
+                                    <TextField fx:id="addressField" onKeyPressed="#findAddress" prefHeight="26.0" prefWidth="238.0" promptText="Address" styleClass="textbox">
                                        <VBox.margin>
                                           <Insets bottom="10.0" />
                                        </VBox.margin>
                                     </TextField>
-                                    <ListView fx:id="addressList" prefHeight="99.0" prefWidth="275.0" styleClass="addressList" />
+                                    <ListView fx:id="addressList" prefHeight="99.0" prefWidth="275.0">
+                                       <styleClass>
+                                          <String fx:value="addressList" />
+                                          <String fx:value="textbox" />
+                                       </styleClass></ListView>
                                  </children>
                                  <HBox.margin>
                                     <Insets right="20.0" />
@@ -144,7 +149,11 @@
                                           <Font name="Calibri" size="25.0" />
                                        </font>
                                     </Label>
-                                    <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="238.0" />
+                                    <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="238.0" promptText="Password">
+                                       <styleClass>
+                                          <String fx:value="textbox" />
+                                          <String fx:value="showPassword-textbox" />
+                                       </styleClass></PasswordField>
                                     <Button fx:id="showPasswordButton" mnemonicParsing="false" onMousePressed="#showPassword" onMouseReleased="#hidePassword" styleClass="btn-showPassword" text="Show Password">
                                        <VBox.margin>
                                           <Insets bottom="10.0" top="10.0" />
@@ -211,7 +220,7 @@
                                     <Insets right="10.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="register" mnemonicParsing="false" onAction="#register" prefHeight="46.0" prefWidth="238.0" styleClass="btn-primary" text="Register">
+                              <Button fx:id="register" mnemonicParsing="false" prefHeight="46.0" prefWidth="238.0" styleClass="btn-primary" text="Register">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>

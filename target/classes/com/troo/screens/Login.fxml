@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <!-- Name: Tommy -->
 <!-- Sprint: 2 -->
-
-<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -56,7 +56,7 @@
                                     <Font name="Calibri" size="25.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="emailField" prefHeight="26.0" prefWidth="310.0" />
+                              <TextField fx:id="emailField" prefHeight="26.0" prefWidth="310.0" promptText="Email" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" />
@@ -69,12 +69,12 @@
                                     <Font name="Calibri" size="25.0" />
                                  </font>
                               </Label>
-                              <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="310.0">
+                              <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="310.0" promptText="Password">
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin>
                               </PasswordField>
-                              <Button fx:id="showPasswordButton" mnemonicParsing="false" onMousePressed="#showPassword" onMouseReleased="#hidePassword" styleClass="btn-showPassword" text="Show Password">
+                              <Button mnemonicParsing="false" onMousePressed="#showPassword" onMouseReleased="#hidePassword" styleClass="btn-showPassword" text="Show Password">
                                  <VBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin>

@@ -3,7 +3,10 @@
 
 package com.troo.controllers;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.UUID;
@@ -12,6 +15,8 @@ import com.troo.controllers.util.AddressAutocomplete;
 import com.troo.controllers.util.Controller;
 import com.troo.controllers.util.Email;
 import com.troo.controllers.util.Error;
+import com.troo.controllers.util.SetDarkMode;
+import com.troo.controllers.util.StorageBucket;
 import com.troo.controllers.util.Encrypt;
 import com.troo.controllers.util.ValidateForm;
 
@@ -21,7 +26,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -43,9 +47,6 @@ public class Authentication {
     private Label errorLabel;
 
     @FXML
-    private Button showPasswordButton;
-
-    @FXML
     private ListView<String> addressList;
 
     @FXML
@@ -57,8 +58,9 @@ public class Authentication {
 
     // Login method
     public void login(ActionEvent event) {
-        // Get the FXMLELements values and set them to the local variables
-        String email = "", password = "";
+        // Get the FXML ELements values and set them to the local variables
+        String email = "", password = "", firstName = "", lastName = "", phone = "",
+                address = "";
         email = emailField.getText();
         email = email.toLowerCase();
         password = passwordField.getText();
@@ -76,12 +78,41 @@ public class Authentication {
         password = Encrypt.hash(password);
 
         // Check if the user exists
-        if (!ValidateForm.checkIfUserExists(email, password, errorLabel, emailField, passwordField)) {
+        if (!ValidateForm.checkIfUserExists(email, password, errorLabel, emailField,
+                passwordField)) {
             return;
         }
 
+        // Get the user data to put in the storge bucket
+        try {
+            FileReader fileReader = new FileReader("src/main/resources/com/troo/data/user_data/users.txt");
+            BufferedReader br = new BufferedReader(fileReader);
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                if (line.contains("[Email: " + email)) {
+                    password = br.readLine();
+                    firstName = br.readLine();
+                    firstName = firstName.replace("First Name: ", "");
+                    lastName = br.readLine();
+                    lastName = lastName.replace("Last Name: ", "");
+                    phone = br.readLine();
+                    phone = phone.replace("Phone: ", "");
+                    address = br.readLine();
+                    address = address.replace("Address: ", "");
+                    address = address.substring(0, address.length() - 1);
+                }
+            }
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        StorageBucket.setUser(email, firstName, lastName, phone, address);
+
         // Change the scene to the home screen
-        Controller.changeScene("/com/troo/screens/HomeScreen.fxml", event);
+        Controller.changeScene("/com/troo/screens/Home.fxml", event);
     }
 
     // Register method, takes an ActionEvent listener as a parameter
@@ -133,7 +164,7 @@ public class Authentication {
 
         // Write the user data to file users.txt
         try {
-            FileWriter fw = new FileWriter("src/main/resources/com/troo/data/users.txt", true);
+            FileWriter fw = new FileWriter("src/main/resources/com/troo/data/user_data/users.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write("[Email: " + email + "\nPassword: " + password + "\nFirst Name: " + firstName + "\nLast Name: "
                     + lastName + "\nPhone: " + phone + "\nAddress: " + address + "]");
@@ -143,12 +174,14 @@ public class Authentication {
             Error.setError("We couldn't create your account", errorLabel);
         }
 
+        StorageBucket.setUser(email, firstName, lastName, phone, address);
+
         // Send the welcome email
         emailSender.sendEmail(email, "Welcome to tróo, " + firstName + "!",
                 "Thank you for registering with tróo. We hope you enjoy your experience with us.");
 
         // Change the scene to the home screen
-        Controller.changeScene("/com/troo/screens/HomeScreen.fxml", event);
+        Controller.changeScene("/com/troo/screens/Home.fxml", event);
     }
 
     // Change the scene to the register screen method, takes an ActionEvent
@@ -220,40 +253,38 @@ public class Authentication {
         Controller.hidePassword(passwordField);
     }
 
-    // Andrew
+    // Andrew dark mode
     // Dark mode method, takes an ActionEvent lisenener as a parameter
     public void setDarkModeLoginScreen(ActionEvent event) {
+        // see if the checkbox is selected
         if (darkModeCheckBox.isSelected()) {
-            emailField.getStyleClass().add("dark-textField");
-            passwordField.getStyleClass().add("dark-textField");
-            passwordField.getStyleClass().add("showPassword-text-dark");
+            SetDarkMode.setDarkModeTextField(emailField);
+            SetDarkMode.setDarkModePasswordField(passwordField);
         } else {
-            emailField.getStyleClass().remove("dark-textField");
-            passwordField.getStyleClass().remove("dark-textField");
-            passwordField.getStyleClass().remove("showPassword-text-dark");
+            SetDarkMode.removeDarkModeTextField(emailField);
+            SetDarkMode.removeDarkModePasswordField(passwordField);
         }
     }
 
     // Dark Mode method, takes an ActionEvent lisenener as a parameter
     public void setDarkModeRegisterScreen(ActionEvent event) {
+        // see if the checkbox is selected
         if (darkModeCheckBox.isSelected()) {
-            emailField.getStyleClass().add("dark-textField");
-            passwordField.getStyleClass().add("dark-textField");
-            firstNameField.getStyleClass().add("dark-textField");
-            lastNameField.getStyleClass().add("dark-textField");
-            phoneField.getStyleClass().add("dark-textField");
-            addressField.getStyleClass().add("dark-textField");
-            addressList.getStyleClass().add("dark-textField");
-            passwordField.getStyleClass().add("showPassword-text-dark");
+            SetDarkMode.setDarkModeTextField(firstNameField);
+            SetDarkMode.setDarkModeTextField(lastNameField);
+            SetDarkMode.setDarkModeTextField(emailField);
+            SetDarkMode.setDarkModeTextField(phoneField);
+            SetDarkMode.setDarkModeTextField(addressField);
+            SetDarkMode.setDarkModePasswordField(passwordField);
+            SetDarkMode.setDarkModeListView(addressList);
         } else {
-            emailField.getStyleClass().remove("dark-textField");
-            passwordField.getStyleClass().remove("dark-textField");
-            firstNameField.getStyleClass().remove("dark-textField");
-            lastNameField.getStyleClass().remove("dark-textField");
-            phoneField.getStyleClass().remove("dark-textField");
-            addressField.getStyleClass().remove("dark-textField");
-            addressList.getStyleClass().remove("dark-textField");
-            passwordField.getStyleClass().remove("showPassword-text-dark");
+            SetDarkMode.removeDarkModeTextField(firstNameField);
+            SetDarkMode.removeDarkModeTextField(lastNameField);
+            SetDarkMode.removeDarkModeTextField(emailField);
+            SetDarkMode.removeDarkModeTextField(phoneField);
+            SetDarkMode.removeDarkModeTextField(addressField);
+            SetDarkMode.removeDarkModePasswordField(passwordField);
+            SetDarkMode.removeDarkModeListView(addressList);
         }
     }
 }

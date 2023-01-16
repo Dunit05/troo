@@ -65,13 +65,13 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
     }
 
     // Send email method with attachment, takes in a path to the file
-    public void sendEmailWithAttachment(String email, String path) {
+    public void sendEmailWithAttachment(String email, String line, String path) {
         // Create a new email object
         Email to = new Email(email);
         Email from = new Email(dotenv.get("FROM_EMAIL"));
-        String subject = "You Logged In";
+        String subject = line;
         Content content = new Content("text/plain",
-                "You logged in to tróo, and your encypted password is: ");
+                "Please see your latest order recipt below: ");
 
         // Create a new mail object, and request object, and attachment object, and byte
         // array
@@ -91,8 +91,8 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
         // Create a new attachment object, and set the content, type, filename
         Attachments attachment = new Attachments();
         attachment.setContent(base64EncodedImageBytes);
-        attachment.setType("image/png");
-        attachment.setFilename("icon.png");
+        attachment.setType("application/pdf");
+        attachment.setFilename(StorageBucket.getReceiptNumber() + ".pdf");
         attachment.setDisposition("attachment");
         attachment.setContentId("troo");
         mail.addAttachments(attachment);

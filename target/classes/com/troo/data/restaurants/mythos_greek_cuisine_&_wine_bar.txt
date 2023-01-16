@@ -1,0 +1,202 @@
+--Data--
+5 Star
+Sleek, minimalist locale preparing classic & contemporary Greek fare, plus meze & wine.
+
+--Appetizer--
+[Horiatiki Salad
+19.00
+Greek salad with tomatoes, cucumbers, red onions, kalamata olives, bell peppers, and feta cheese with a red wine vinaigrette
+n/a
+1
+horiatiki-salad]
+--Appetizer--
+[Grilled Octopus
+28.00
+Served with cucumbers, olives, red onions and Greek yogurt
+n/a
+1
+grilled-octopus]
+--Appetizer--
+[Saganaki
+19.00
+Ouzo flambeed kefalotyri cheese
+n/a
+1
+saganaki]
+--Appetizer--
+[Dolmades
+19.00
+Grape leaves stuffed with short grain rice, fresh herbs, golden raisins and tzatziki, kalamata olives
+n/a
+1
+dolmades]
+--Appetizer--
+[Tzatziki
+12.00
+Strained Greek yogurt made of cow’s and goat’s milk with cucumbers, dill, and garlic
+n/a
+1
+tzatziki]
+--Appetizer--
+[Taramasalata
+12.00
+Carp roe caviar, lemon juice, crusty bread, olive oils
+n/a
+1
+taramasalata]
+--Appetizer--
+[Tirokafteri
+12.00
+Spicy Greek feta spread with roasted red peppers
+n/a
+1
+tirokafteri]
+--Appetizer--
+[Hummus
+30.00
+Chickpeas, tahini, garlic, lemon juice
+n/a
+1
+hummus]
+--Appetizer--
+[Baked feta
+16.00
+Feta cheese baked with tomatoes, onions, and herbs
+n/a
+1
+authentic-greek-feta-cheese]
+--Appetizer--
+[Spanakopita
+16.00
+Spinach and feta cheese wrapped in phyllo dough
+n/a
+1
+spanakopita]
+--Appetizer--
+[Gigandes Plaki
+19.00
+Baked beans with tomatoes, onions, and herbs
+n/a
+1
+gigandes-plaki]
+
+--Entree--
+[Avgolemono Soup
+12.00
+Traditional Greek soup with chicken, fresh herbs, egg, lemon juice, rice
+gluten-free
+1
+avgolemono-soup]
+--Entree--
+[Grilled Octopus
+28.00
+Served with cucumbers, olives, red onions and Greek yogurt
+n/a
+1
+grilled-octopus]
+--Entree--
+[Grilled Lamb Chops
+38.00
+Served with Greek salad, tzatziki, and pita bread
+n/a
+1
+grilled-lamb-chops]
+--Entree--
+[Moussaka
+28.00
+Layers of eggplant, potatoes, ground beef, and béchamel sauce
+n/a
+1
+moussaka]
+--Entree--
+[Grilled Chicken Souvlaki
+22.00
+Served with Greek salad, tzatziki, and pita bread
+n/a
+1
+grilled-chicken-souvlaki]
+--Entree--
+[Lemonati Kotoleta
+24.00
+Breaded pork chop with lemon sauce, served with Greek salad, tzatziki, and pita bread
+n/a
+1
+lemonati-kotoleta]
+[Kalamata Chicken
+24.00
+Grilled chicken breast marinated in lemon juice, olive oil, and oregano, served with Greek salad, tzatziki, and pita bread
+n/a
+1
+kalamata-chicken]
+[Paidakia
+24.00
+Grilled lamb chops served with Greek salad, tzatziki, and pita bread
+n/a
+1
+paidakia]
+
+
+--Dessert--
+[Galaktoboureko
+12.00
+Phyllo dough filled with custard and baked in honey syrup
+n/a
+1
+galaktoboureko]
+[Rizogalo
+14.00
+Rice pudding with cinnamon and honey
+n/a
+1
+rizogalo]
+[Loukoumades
+10.00
+Greek doughnuts with honey syrup
+n/a
+1
+loukoumades]
+[Halvas
+10.00
+Sweet semolina pudding
+n/a
+1
+halvas]
+[Kserotigana
+10.00
+Greek cookies with walnuts and honey
+n/a
+1
+kserotigana]
+
+--Drink--
+[Portokalada (Orange)
+6.00
+Portokalada is a traditional Greek orange-based sparkling drink made from orange peel and sugar. It is often served as a digestif, and is known for its sweet and intense orange flavor. The liqueur is usually made by infusing orange peels in spirit and then sweetening the mixture with sugar. Comes in 750ml
+n/a
+1
+portokalada-loux-orange]
+[Sprite
+6.00
+Sprite, comes in 750ml
+n/a
+1
+sprite]
+[Pepsi
+6.00
+Pepsi, comes in 750ml
+n/a
+1
+pepsi]
+[San Pellegrino Sparkling Mineral Water
+6.00
+San Pellegrino, comes in 750ml
+n/a
+1
+san-pellegrino-sparkling-mineral-water]
+[Perrier Mineral Sparkling Water
+6.00
+Perrier, comes in 750ml
+n/a
+1
+perrier-mineral-sparkling-water]
+
