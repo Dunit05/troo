@@ -26,6 +26,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -44,13 +45,18 @@ public class Authentication {
     private PasswordField passwordField;
 
     @FXML
-    private Label errorLabel;
-
-    @FXML
     private ListView<String> addressList;
 
     @FXML
     private CheckBox darkModeCheckBox;
+
+    @FXML
+    private Label greetingLabel, emailLabel, passwordLabel, helpLabel, errorLabel, orLabel, firstNameLabel,
+            lastNameLabel,
+            phoneLabel, addressLabel, passwordInfo1, passwordInfo2, passwordInfo3, passwordInfo4, passwordInfo5;
+
+    @FXML
+    private Button registerButton, loginButton, showPasswordButton, backButton;
 
     // Get a random UUID for the address autocomplete (to increase security & add
     // session)
@@ -260,9 +266,29 @@ public class Authentication {
         if (darkModeCheckBox.isSelected()) {
             SetDarkMode.setDarkModeTextField(emailField);
             SetDarkMode.setDarkModePasswordField(passwordField);
+            SetDarkMode.setDarkModeLabel(greetingLabel);
+            SetDarkMode.setDarkModeLabel(errorLabel);
+            SetDarkMode.setDarkModeLabel(emailLabel);
+            SetDarkMode.setDarkModeLabel(passwordLabel);
+            SetDarkMode.setDarkModeLabel(helpLabel);
+            SetDarkMode.setDarkModeLabel(orLabel);
+            SetDarkMode.setPrimaryDarkModeButton(registerButton);
+            SetDarkMode.setShowPasswordButtonDark(showPasswordButton);
+            SetDarkMode.setSecondaryDarkModeButton(loginButton);
+            SetDarkMode.setDarkModeCheckBox(darkModeCheckBox);
         } else {
             SetDarkMode.removeDarkModeTextField(emailField);
             SetDarkMode.removeDarkModePasswordField(passwordField);
+            SetDarkMode.removeDarkModeLabel(greetingLabel);
+            SetDarkMode.removeDarkModeLabel(errorLabel);
+            SetDarkMode.removeDarkModeLabel(emailLabel);
+            SetDarkMode.removeDarkModeLabel(passwordLabel);
+            SetDarkMode.removeDarkModeLabel(helpLabel);
+            SetDarkMode.removeDarkModeLabel(orLabel);
+            SetDarkMode.removePrimaryDarkModeButton(registerButton);
+            SetDarkMode.removeShowPasswordButtonDark(showPasswordButton);
+            SetDarkMode.removeSecondaryDarkModeButton(loginButton);
+            SetDarkMode.removeDarkModeCheckBox(darkModeCheckBox);
         }
     }
 
@@ -277,6 +303,24 @@ public class Authentication {
             SetDarkMode.setDarkModeTextField(addressField);
             SetDarkMode.setDarkModePasswordField(passwordField);
             SetDarkMode.setDarkModeListView(addressList);
+            SetDarkMode.setDarkModeLabel(firstNameLabel);
+            SetDarkMode.setDarkModeLabel(lastNameLabel);
+            SetDarkMode.setDarkModeLabel(emailLabel);
+            SetDarkMode.setDarkModeLabel(phoneLabel);
+            SetDarkMode.setDarkModeLabel(addressLabel);
+            SetDarkMode.setDarkModeLabel(passwordLabel);
+            SetDarkMode.setDarkModeLabel(greetingLabel);
+            SetDarkMode.setDarkModeLabel(helpLabel);
+            SetDarkMode.setDarkModeLabel(passwordInfo1);
+            SetDarkMode.setDarkModeLabel(passwordInfo2);
+            SetDarkMode.setDarkModeLabel(passwordInfo3);
+            SetDarkMode.setDarkModeLabel(passwordInfo4);
+            SetDarkMode.setDarkModeLabel(passwordInfo5);
+            SetDarkMode.setDarkModeCheckBox(darkModeCheckBox);
+            SetDarkMode.setPrimaryDarkModeButton(registerButton);
+            SetDarkMode.setShowPasswordButtonDark(showPasswordButton);
+            SetDarkMode.setSecondaryDarkModeButton(backButton);
+            SetDarkMode.setDarkModeLabel(errorLabel);
         } else {
             SetDarkMode.removeDarkModeTextField(firstNameField);
             SetDarkMode.removeDarkModeTextField(lastNameField);
@@ -285,6 +329,24 @@ public class Authentication {
             SetDarkMode.removeDarkModeTextField(addressField);
             SetDarkMode.removeDarkModePasswordField(passwordField);
             SetDarkMode.removeDarkModeListView(addressList);
+            SetDarkMode.removeDarkModeLabel(firstNameLabel);
+            SetDarkMode.removeDarkModeLabel(lastNameLabel);
+            SetDarkMode.removeDarkModeLabel(emailLabel);
+            SetDarkMode.removeDarkModeLabel(phoneLabel);
+            SetDarkMode.removeDarkModeLabel(addressLabel);
+            SetDarkMode.removeDarkModeLabel(passwordLabel);
+            SetDarkMode.removeDarkModeLabel(greetingLabel);
+            SetDarkMode.removeDarkModeLabel(helpLabel);
+            SetDarkMode.removeDarkModeLabel(passwordInfo1);
+            SetDarkMode.removeDarkModeLabel(passwordInfo2);
+            SetDarkMode.removeDarkModeLabel(passwordInfo3);
+            SetDarkMode.removeDarkModeLabel(passwordInfo4);
+            SetDarkMode.removeDarkModeLabel(passwordInfo5);
+            SetDarkMode.removeDarkModeCheckBox(darkModeCheckBox);
+            SetDarkMode.removePrimaryDarkModeButton(registerButton);
+            SetDarkMode.removeShowPasswordButtonDark(showPasswordButton);
+            SetDarkMode.removeSecondaryDarkModeButton(backButton);
+            SetDarkMode.removeDarkModeLabel(errorLabel);
         }
     }
 }

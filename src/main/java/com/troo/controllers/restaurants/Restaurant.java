@@ -5,7 +5,7 @@ package com.troo.controllers.restaurants;
 
 public class Restaurant {
 
-    private String name, imagePath, rating, fileName, description;
+    private String name, imagePath, rating, fileName, description, location;
 
     public Restaurant() {
         this.name = "";
@@ -13,14 +13,17 @@ public class Restaurant {
         this.imagePath = "";
         this.rating = "";
         this.description = "";
+        this.location = "";
     }
 
-    public Restaurant(String name, String imagePath, String rating, String fileName, String description) {
+    public Restaurant(String name, String imagePath, String rating, String fileName, String description,
+            String loaction) {
         this.name = name;
         this.imagePath = imagePath;
         this.rating = rating;
         this.fileName = fileName;
         this.description = description;
+        this.location = loaction;
     }
 
     public String getName() {
@@ -43,6 +46,10 @@ public class Restaurant {
         return this.description;
     }
 
+    public String getLocation() {
+        return this.location;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -61,6 +68,10 @@ public class Restaurant {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String toString() {

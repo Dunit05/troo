@@ -10,11 +10,13 @@ import com.troo.controllers.menu.Item;
 import com.troo.controllers.util.Controller;
 import com.troo.controllers.util.StorageBucket;
 import com.troo.controllers.util.Error;
+import com.troo.controllers.util.SetDarkMode;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -24,37 +26,21 @@ import javafx.scene.image.ImageView;
 
 public class Order implements Initializable {
     @FXML
-    private Label restaurantName;
+    private Label restaurantName, errorLabel, infoLabel1, infoLabel2, infoLabel3, helpLabel, appetizerLabel1,
+            entreeLabel1,
+            dessertLabel1, drinkLabel1, quantityLabel1, quantityLabel2, quantityLabel3, quantityLabel4;
 
     @FXML
-    private Label errorLabel;
+    private Button addToCartButton, backButton;
 
     @FXML
-    private Button addToCartButton;
+    private ListView<Item> appetizersList, entreesList, dessertsList, drinksList;
 
     @FXML
-    private ListView<Item> appetizersList;
+    private TextField appetizersQuantityField, entreesQuantityField, dessertsQuantityField, drinksQuantityField;
 
     @FXML
-    private ListView<Item> entreesList;
-
-    @FXML
-    private ListView<Item> dessertsList;
-
-    @FXML
-    private ListView<Item> drinksList;
-
-    @FXML
-    private TextField appetizersQuantityField;
-
-    @FXML
-    private TextField entreesQuantityField;
-
-    @FXML
-    private TextField dessertsQuantityField;
-
-    @FXML
-    private TextField drinksQuantityField;
+    private CheckBox darkModeCheckBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -253,24 +239,40 @@ public class Order implements Initializable {
         Item selectedDessertsItem = dessertsList.getSelectionModel().getSelectedItem();
         Item selectedDrinksItem = drinksList.getSelectionModel().getSelectedItem();
 
-        if (appetizersQuantityField.getText().length() > 0 && selectedAppetizersItem == null) {
+        if (appetizersQuantityField.getText().length() < 0 && selectedAppetizersItem == null) {
             Error.setError("Please select an appetizer and enter a valid quantity (Above 0)", errorLabel);
+            Error.setTextFieldErrorBorder(appetizersQuantityField);
             return;
+        } else {
+            Error.removeError(errorLabel);
+            Error.removeTextFieldErrorBorder(appetizersQuantityField);
         }
 
-        if (entreesQuantityField.getText().length() > 0 && selectedEntreesItem == null) {
+        if (entreesQuantityField.getText().length() < 0 && selectedEntreesItem == null) {
             Error.setError("Please select an entree and enter a valid quantity (Above 0)", errorLabel);
+            Error.setTextFieldErrorBorder(entreesQuantityField);
             return;
+        } else {
+            Error.removeError(errorLabel);
+            Error.removeTextFieldErrorBorder(entreesQuantityField);
         }
 
-        if (dessertsQuantityField.getText().length() > 0 && selectedDessertsItem == null) {
+        if (dessertsQuantityField.getText().length() < 0 && selectedDessertsItem == null) {
             Error.setError("Please select a dessert and enter a valid quantity (Above 0)", errorLabel);
+            Error.setTextFieldErrorBorder(dessertsQuantityField);
             return;
+        } else {
+            Error.removeError(errorLabel);
+            Error.removeTextFieldErrorBorder(dessertsQuantityField);
         }
 
-        if (drinksQuantityField.getText().length() > 0 && selectedDrinksItem == null) {
+        if (drinksQuantityField.getText().length() < 0 && selectedDrinksItem == null) {
             Error.setError("Please select a drink and enter a valid quantity (Above 0)", errorLabel);
+            Error.setTextFieldErrorBorder(drinksQuantityField);
             return;
+        } else {
+            Error.removeError(errorLabel);
+            Error.removeTextFieldErrorBorder(drinksQuantityField);
         }
 
         if (appetizersQuantityField.getText().length() > 0 && selectedAppetizersItem != null) {
@@ -315,7 +317,66 @@ public class Order implements Initializable {
         Controller.changeScene("/com/troo/screens/Home.fxml", event);
     }
 
+    // To Cart Button
     public void cart(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Cart.fxml", event);
+    }
+
+    public void setDarkModeOrderScreen(ActionEvent event) {
+        // see if the checkbox is selected
+        if (darkModeCheckBox.isSelected()) {
+            SetDarkMode.setDarkModeTextField(appetizersQuantityField);
+            SetDarkMode.setDarkModeTextField(entreesQuantityField);
+            SetDarkMode.setDarkModeTextField(dessertsQuantityField);
+            SetDarkMode.setDarkModeTextField(drinksQuantityField);
+            SetDarkMode.setDarkModeListView(appetizersList);
+            SetDarkMode.setDarkModeListView(entreesList);
+            SetDarkMode.setDarkModeListView(dessertsList);
+            SetDarkMode.setDarkModeListView(drinksList);
+            SetDarkMode.setDarkModeLabel(errorLabel);
+            SetDarkMode.setDarkModeLabel(restaurantName);
+            SetDarkMode.setDarkModeLabel(infoLabel1);
+            SetDarkMode.setDarkModeLabel(infoLabel2);
+            SetDarkMode.setDarkModeLabel(infoLabel3);
+            SetDarkMode.setDarkModeLabel(appetizerLabel1);
+            SetDarkMode.setDarkModeLabel(entreeLabel1);
+            SetDarkMode.setDarkModeLabel(dessertLabel1);
+            SetDarkMode.setDarkModeLabel(drinkLabel1);
+            SetDarkMode.setDarkModeLabel(quantityLabel1);
+            SetDarkMode.setDarkModeLabel(quantityLabel2);
+            SetDarkMode.setDarkModeLabel(quantityLabel3);
+            SetDarkMode.setDarkModeLabel(quantityLabel4);
+            SetDarkMode.setDarkModeLabel(helpLabel);
+            SetDarkMode.setDarkModeCheckBox(darkModeCheckBox);
+            SetDarkMode.setPrimaryDarkModeButton(addToCartButton);
+            SetDarkMode.setSecondaryDarkModeButton(backButton);
+
+        } else {
+            SetDarkMode.removeDarkModeTextField(appetizersQuantityField);
+            SetDarkMode.removeDarkModeTextField(entreesQuantityField);
+            SetDarkMode.removeDarkModeTextField(dessertsQuantityField);
+            SetDarkMode.removeDarkModeTextField(drinksQuantityField);
+            SetDarkMode.removeDarkModeListView(appetizersList);
+            SetDarkMode.removeDarkModeListView(entreesList);
+            SetDarkMode.removeDarkModeListView(dessertsList);
+            SetDarkMode.removeDarkModeListView(drinksList);
+            SetDarkMode.removeDarkModeLabel(errorLabel);
+            SetDarkMode.removeDarkModeLabel(restaurantName);
+            SetDarkMode.removeDarkModeLabel(infoLabel1);
+            SetDarkMode.removeDarkModeLabel(infoLabel2);
+            SetDarkMode.removeDarkModeLabel(infoLabel3);
+            SetDarkMode.removeDarkModeLabel(appetizerLabel1);
+            SetDarkMode.removeDarkModeLabel(entreeLabel1);
+            SetDarkMode.removeDarkModeLabel(dessertLabel1);
+            SetDarkMode.removeDarkModeLabel(drinkLabel1);
+            SetDarkMode.removeDarkModeLabel(quantityLabel1);
+            SetDarkMode.removeDarkModeLabel(quantityLabel2);
+            SetDarkMode.removeDarkModeLabel(quantityLabel3);
+            SetDarkMode.removeDarkModeLabel(quantityLabel4);
+            SetDarkMode.removeDarkModeLabel(helpLabel);
+            SetDarkMode.removeDarkModeCheckBox(darkModeCheckBox);
+            SetDarkMode.removePrimaryDarkModeButton(addToCartButton);
+            SetDarkMode.removeSecondaryDarkModeButton(backButton);
+        }
     }
 }

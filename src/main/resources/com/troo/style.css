@@ -19,6 +19,16 @@
     -fx-background-radius: 50;
 }
 
+.btn-primary-dark {
+    -fx-background-color: #12569b;
+    -fx-text-fill: #1e1e1e;
+    -fx-font-color: #1e1e1e;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 50;
+}
+
 .btn-primary:hover {
     -fx-background-color: #166ac0;
 }
@@ -26,6 +36,17 @@
 .btn-secondary {
     -fx-background-color: transparent;
     -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-color: #12569b;
+    -fx-border-width: 3;
+    -fx-border-radius: 50;
+}
+
+.btn-secondary-dark {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1e1e1e;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-padding: 10 20;
@@ -44,6 +65,15 @@
 .btn-showPassword {
     -fx-background-color: #12569b;
     -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 20;
+    -fx-background-radius: 50;
+}
+
+.btn-showPassword-dark {
+    -fx-background-color: #12569b;
+    -fx-text-fill: #1e1e1e;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-padding: 5 20;
@@ -90,4 +120,14 @@
 .showPassword-textbox-dark {
     -fx-prompt-text-fill: white;
     -fx-opacity: 1;
+}
+
+.label-dark {
+    -fx-text-fill: #1e1e1e;
+    -fx-font-color: #1e1e1e;
+}
+
+.checkbox-dark {
+    -fx-text-fill: #1e1e1e;
+    -fx-font-color: #1e1e1e;
 }

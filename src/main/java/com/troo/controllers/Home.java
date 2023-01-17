@@ -3,23 +3,18 @@
 
 package com.troo.controllers;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-
-import javax.imageio.ImageIO;
 
 import java.io.IOException;
 
-import java.awt.Toolkit;
-
 import com.troo.controllers.restaurants.Restaurant;
 import com.troo.controllers.util.Controller;
+import com.troo.controllers.util.SetDarkMode;
 import com.troo.controllers.util.StorageBucket;
 
 import javafx.collections.FXCollections;
@@ -46,10 +41,13 @@ public class Home implements Initializable {
     private ListView<Restaurant> restaurants;
 
     @FXML
-    private Label greeting;
+    private Label greetingNameLabel, greetingLabel, searchLabel, searchedLabel, helpLabel;
 
     @FXML
-    private Button checkoutButton;
+    private CheckBox darkModeCheckBox;
+
+    @FXML
+    private Button checkoutButton, logoutButton;
 
     @FXML
     private TextField searchField;
@@ -61,7 +59,7 @@ public class Home implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         // Set the greeting
         String userName = StorageBucket.getUserName();
-        greeting.setText("Hello, " + userName + "!");
+        greetingNameLabel.setText("Hello, " + userName + "!");
         // Set the checkout button text
         if (StorageBucket.getCartAmount() == 0) {
             checkoutButton.setText("Checkout");
@@ -78,7 +76,7 @@ public class Home implements Initializable {
         for (File file : files) {
             if (file.isFile()) {
                 String fileName = "", imagePath = "", restaurantName = "", restaurantRating = "",
-                        restaurantDescription = "";
+                        restaurantDescription = "", restaurantLocation = "";
                 fileName = file.getName();
                 imagePath = fileName.substring(0, fileName.length() - 4);
                 restaurantName = fileName.substring(0, fileName.length() - 4);
@@ -99,6 +97,8 @@ public class Home implements Initializable {
                         if (line.contains("--Data--")) {
                             restaurantRating = br.readLine();
                             restaurantDescription = br.readLine();
+                            restaurantLocation = br.readLine();
+
                         }
                         line = br.readLine();
                     }
@@ -109,9 +109,11 @@ public class Home implements Initializable {
 
                 // add the nameless object to the restaurants listview
                 restaurants.getItems().add(
-                        new Restaurant(restaurantName, imagePath, restaurantRating, fileName, restaurantDescription));
+                        new Restaurant(restaurantName, imagePath, restaurantRating, fileName, restaurantDescription,
+                                restaurantLocation));
                 restaurantList.add(
-                        new Restaurant(restaurantName, imagePath, restaurantRating, fileName, restaurantDescription));
+                        new Restaurant(restaurantName, imagePath, restaurantRating, fileName, restaurantDescription,
+                                restaurantLocation));
 
             }
         }
@@ -127,7 +129,7 @@ public class Home implements Initializable {
                     setGraphic(null);
                 } else {
                     String text = restaurant.getName() + "\n" + restaurant.getRating() + " Restaurant Rating\n"
-                            + restaurant.getDescription();
+                            + restaurant.getDescription() + "\n" + restaurant.getLocation();
                     String imagePath = "https://images-furot-tech.netlify.app/" + restaurant.getImagePath() + ".png";
                     Image image = new Image(imagePath);
                     ImageView imageView = new ImageView(image);
@@ -183,6 +185,35 @@ public class Home implements Initializable {
     // Go to the cart page
     public void toCart(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Cart.fxml", event);
+    }
+
+    // Andrew dark mode
+    // Set the dark mode for the Home screen
+    public void setDarkModeHomeScreen(ActionEvent event) {
+        // see if the checkbox is selected
+        if (darkModeCheckBox.isSelected()) {
+            SetDarkMode.setDarkModeTextField(searchField);
+            SetDarkMode.setDarkModeListView(restaurants);
+            SetDarkMode.setDarkModeLabel(greetingLabel);
+            SetDarkMode.setDarkModeLabel(greetingNameLabel);
+            SetDarkMode.setDarkModeLabel(searchLabel);
+            SetDarkMode.setDarkModeLabel(searchedLabel);
+            SetDarkMode.setDarkModeLabel(helpLabel);
+            SetDarkMode.setPrimaryDarkModeButton(checkoutButton);
+            SetDarkMode.setSecondaryDarkModeButton(logoutButton);
+            SetDarkMode.setDarkModeCheckBox(darkModeCheckBox);
+        } else {
+            SetDarkMode.removeDarkModeTextField(searchField);
+            SetDarkMode.removeDarkModeListView(restaurants);
+            SetDarkMode.removeDarkModeLabel(greetingLabel);
+            SetDarkMode.removeDarkModeLabel(greetingNameLabel);
+            SetDarkMode.removeDarkModeLabel(searchLabel);
+            SetDarkMode.removeDarkModeLabel(searchedLabel);
+            SetDarkMode.removeDarkModeLabel(helpLabel);
+            SetDarkMode.removePrimaryDarkModeButton(checkoutButton);
+            SetDarkMode.removeSecondaryDarkModeButton(logoutButton);
+            SetDarkMode.removeDarkModeCheckBox(darkModeCheckBox);
+        }
     }
 
 }

@@ -53,6 +53,7 @@ public class GenerateReceipt {
             Table informationTable = new Table(twoColWidthForInfo);
             Table nestedInfoTo = new Table(twoColWidthForInfo);
             Table nestedInfoFrom = new Table(twoColWidthForInfo);
+            Table itemsHeader = new Table(itemsColWidth);
             Table items = new Table(itemsColWidth);
             Table nestedItems = new Table(itemsColWidth);
             Table paymentInfo = new Table(paymentColWidth);
@@ -83,6 +84,8 @@ public class GenerateReceipt {
             nestedReciptInfoTable.addCell(documentText("\n" + StorageBucket.getTransactionNumber()));
             nestedReciptInfoTable.addCell(documentText("Date:"));
             nestedReciptInfoTable.addCell(documentText(getDate()));
+            nestedReciptInfoTable.addCell(documentText("Delivery Time:"));
+            nestedReciptInfoTable.addCell(documentText(String.valueOf(StorageBucket.getDeliveryTime()) + " minutes"));
 
             receiptInfoTable.addCell(new Cell().add(nestedReciptInfoTable).setBorder(Border3D.NO_BORDER));
 
@@ -109,12 +112,13 @@ public class GenerateReceipt {
             informationTable.addCell(new Cell().add(nestedInfoFrom).setBorder(Border3D.NO_BORDER));
 
             // Add the item column headers
-            items.setBackgroundColor(WebColors.getRGBColor("#CFD2CF"), 1f);
-            items.addCell(documentText("Item"));
-            items.addCell(documentText("Restaurant"));
-            items.addCell(documentText("Description"));
-            items.addCell(documentText("Price $"));
+            itemsHeader.setBackgroundColor(WebColors.getRGBColor("#CFD2CF"), 1f);
+            itemsHeader.addCell(documentText("Item"));
+            itemsHeader.addCell(documentText("Restaurant"));
+            itemsHeader.addCell(documentText("Description"));
+            itemsHeader.addCell(documentText("Price $"));
 
+            items.setBackgroundColor(WebColors.getRGBColor("#FFFFFF"), 1f);
             // Add the items
             for (int i = 0; i < StorageBucket.getCart().size(); i++) {
                 items.addCell(documentText(StorageBucket.getCart().get(i).getName()));
@@ -145,6 +149,7 @@ public class GenerateReceipt {
             document.add(space);
             document.add(line2);
             document.add(space);
+            document.add(itemsHeader);
             document.add(items);
             document.add(nestedItems);
             document.add(space);

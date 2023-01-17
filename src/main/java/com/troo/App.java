@@ -12,6 +12,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+import com.troo.controllers.util.DistanceMatrix;
+
 public class App extends Application {
     // Override the start method in the Application class
     @Override

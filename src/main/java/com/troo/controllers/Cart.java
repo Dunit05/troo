@@ -5,11 +5,14 @@ import java.util.ResourceBundle;
 
 import com.troo.controllers.menu.Item;
 import com.troo.controllers.util.Controller;
+import com.troo.controllers.util.SetDarkMode;
 import com.troo.controllers.util.StorageBucket;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -19,10 +22,16 @@ import javafx.scene.image.ImageView;
 public class Cart implements Initializable {
 
     @FXML
-    Label amount, subtotal;
+    Label amount, subtotal, greetingLabel, greetingLabel2, infoLabel, helpLabel;
+
+    @FXML
+    Button payButton, backButton, deleteButton;
 
     @FXML
     ListView<Item> cartList;
+
+    @FXML
+    CheckBox darkModeCheckBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -87,4 +96,32 @@ public class Cart implements Initializable {
         Controller.changeScene("/com/troo/screens/Checkout.fxml", event);
     }
 
+    public void setDarkModeCartScreen(ActionEvent event) {
+        // see if the checkbox is selected
+        if (darkModeCheckBox.isSelected()) {
+            SetDarkMode.setDarkModeListView(cartList);
+            SetDarkMode.setDarkModeLabel(amount);
+            SetDarkMode.setDarkModeLabel(subtotal);
+            SetDarkMode.setDarkModeLabel(greetingLabel);
+            SetDarkMode.setDarkModeLabel(greetingLabel2);
+            SetDarkMode.setDarkModeLabel(infoLabel);
+            SetDarkMode.setDarkModeLabel(helpLabel);
+            SetDarkMode.setPrimaryDarkModeButton(payButton);
+            SetDarkMode.setSecondaryDarkModeButton(deleteButton);
+            SetDarkMode.setSecondaryDarkModeButton(backButton);
+            SetDarkMode.setDarkModeCheckBox(darkModeCheckBox);
+        } else {
+            SetDarkMode.removeDarkModeListView(cartList);
+            SetDarkMode.removeDarkModeLabel(amount);
+            SetDarkMode.removeDarkModeLabel(subtotal);
+            SetDarkMode.removeDarkModeLabel(greetingLabel);
+            SetDarkMode.removeDarkModeLabel(greetingLabel2);
+            SetDarkMode.removeDarkModeLabel(infoLabel);
+            SetDarkMode.removeDarkModeLabel(helpLabel);
+            SetDarkMode.removePrimaryDarkModeButton(payButton);
+            SetDarkMode.removeSecondaryDarkModeButton(deleteButton);
+            SetDarkMode.removeSecondaryDarkModeButton(backButton);
+            SetDarkMode.removeDarkModeCheckBox(darkModeCheckBox);
+        }
+    }
 }

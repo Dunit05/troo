@@ -1,20 +1,21 @@
 --Data--
 5 Star
 Upscale Greek cuisine & wines in a refined, contemporary setting.
+133 Richmond St W, Toronto, ON M5H 2L3
 
 --Appetizer--
 [Horiatiki Salad
 19.00
 Greek salad with tomatoes, cucumbers, red onions, kalamata olives, bell peppers, and feta cheese with a red wine vinaigrette
 n/a
-1
+5
 horiatiki-salad]
 --Appetizer--
 [Grilled Octopus
 28.00
 Served with cucumbers, olives, red onions and Greek yogurt
 n/a
-1
+10
 grilled-octopus]
 --Appetizer--
 [Saganaki
