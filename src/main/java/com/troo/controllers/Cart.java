@@ -1,3 +1,5 @@
+// Name: Tommy
+// Sprint:
 package com.troo.controllers;
 
 import java.net.URL;
@@ -21,6 +23,7 @@ import javafx.scene.image.ImageView;
 
 public class Cart implements Initializable {
 
+    // Get all the FXML elements
     @FXML
     Label amount, subtotal, greetingLabel, greetingLabel2, infoLabel, helpLabel;
 
@@ -33,6 +36,7 @@ public class Cart implements Initializable {
     @FXML
     CheckBox darkModeCheckBox;
 
+    // Override the initialize method to load all the page data
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // for every item in the StorageBucket.cart, add it to the cartList
@@ -45,6 +49,7 @@ public class Cart implements Initializable {
                 "Amount of Items: " + StorageBucket.getCartAmount());
         subtotal.setText("Subtotal: $" + StorageBucket.getCartTotal());
 
+        // Set the cell factory for the cartList
         cartList.setCellFactory(param -> new ListCell<Item>() {
             @Override
             protected void updateItem(Item item, boolean empty) {
@@ -56,7 +61,7 @@ public class Cart implements Initializable {
                 } else {
                     String text = "Dish: " + item.getName() + "\nPrice: $" + item.getPrice() + "\nDescription: "
                             + item.getDescription() + "\nNutrition Notes: "
-                            + item.getNutritionNotes();
+                            + item.getNutritionNotes() + "\nRestaurant: " + item.getRestaurantName();
                     String imagePath = "https://images-furot-tech.netlify.app/" + item.getImagePath() + ".png";
                     Image image = new Image(imagePath);
                     ImageView imageView = new ImageView(image);
@@ -69,6 +74,7 @@ public class Cart implements Initializable {
         });
     }
 
+    // Method to delete an item from the cart
     public void delete(ActionEvent event) {
         // Get the selected item
         Item item = cartList.getSelectionModel().getSelectedItem();
@@ -88,14 +94,17 @@ public class Cart implements Initializable {
         subtotal.setText("Subtotal: $" + StorageBucket.getCartTotal());
     }
 
+    // Method to go back to the menu
     public void back(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Login.fxml", event);
     }
 
+    // Method to go to the checkout screen
     public void toCheckout(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Checkout.fxml", event);
     }
 
+    // Method to set the dark mode on the cart screen
     public void setDarkModeCartScreen(ActionEvent event) {
         // see if the checkbox is selected
         if (darkModeCheckBox.isSelected()) {

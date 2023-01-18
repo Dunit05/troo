@@ -73,6 +73,7 @@ public class Home implements Initializable {
         File folder = new File(folderPath);
         File[] files = folder.listFiles();
 
+        // Loop through the files in the restaurants folder
         for (File file : files) {
             if (file.isFile()) {
                 String fileName = "", imagePath = "", restaurantName = "", restaurantRating = "",
@@ -187,7 +188,6 @@ public class Home implements Initializable {
         Controller.changeScene("/com/troo/screens/Cart.fxml", event);
     }
 
-    // Andrew dark mode
     // Set the dark mode for the Home screen
     public void setDarkModeHomeScreen(ActionEvent event) {
         // see if the checkbox is selected
@@ -215,5 +215,4 @@ public class Home implements Initializable {
             SetDarkMode.removeDarkModeCheckBox(darkModeCheckBox);
         }
     }
-
 }

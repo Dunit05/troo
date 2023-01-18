@@ -1,3 +1,5 @@
+// Name: Tommy
+// Sprint: 
 package com.troo.controllers;
 
 import java.io.BufferedReader;
@@ -25,6 +27,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Order implements Initializable {
+
+    // FXML Variables
     @FXML
     private Label restaurantName, errorLabel, infoLabel1, infoLabel2, infoLabel3, helpLabel, appetizerLabel1,
             entreeLabel1,
@@ -42,12 +46,13 @@ public class Order implements Initializable {
     @FXML
     private CheckBox darkModeCheckBox;
 
+    // Initialize the order screen with an override
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Set the restaurant name
         String restaurantName = StorageBucket.getChoosenRestaurant().getName(),
                 fileName = StorageBucket.getChoosenRestaurant().getFileName();
-        this.restaurantName.setText("Order Now from " + restaurantName + "...");
+        this.restaurantName.setText("Order from " + restaurantName + "...");
 
         // Set the appetizers list
         String folderPath = "src/main/resources/com/troo/data/restaurants";
@@ -57,7 +62,7 @@ public class Order implements Initializable {
         // Go to the file an to read the data
         for (File file : files) {
             if (file.getName().equals(fileName)) {
-                // Read the appetizers
+                // Read the file
                 try {
                     FileReader reader = new FileReader(file);
                     BufferedReader br = new BufferedReader(reader);
@@ -65,7 +70,9 @@ public class Order implements Initializable {
                             itemImagePath = "";
                     double itemPrepTime = 0, itemPrice = 0;
 
+                    // If the line is not null, read the line
                     while ((line = br.readLine()) != null) {
+                        // If the line is an appetizer, read the data
                         if (line.equals("--Appetizer--")) {
                             itemName = br.readLine();
                             itemName = itemName.substring(1, itemName.length());
@@ -80,6 +87,7 @@ public class Order implements Initializable {
                                     itemNutritionNotes, itemPrepTime, itemImagePath, restaurantName));
                         }
 
+                        // If the line is an entree, read the data
                         if (line.equals("--Entree--")) {
                             itemName = br.readLine();
                             itemName = itemName.substring(1, itemName.length());
@@ -94,6 +102,7 @@ public class Order implements Initializable {
                                     itemNutritionNotes, itemPrepTime, itemImagePath, restaurantName));
                         }
 
+                        // If the line is a dessert, read the data
                         if (line.equals("--Dessert--")) {
                             itemName = br.readLine();
                             itemName = itemName.substring(1, itemName.length());
@@ -108,6 +117,7 @@ public class Order implements Initializable {
                                     itemNutritionNotes, itemPrepTime, itemImagePath, restaurantName));
                         }
 
+                        // If the line is a drink, read the data
                         if (line.equals("--Drink--")) {
                             itemName = br.readLine();
                             itemName = itemName.substring(1, itemName.length());
@@ -231,6 +241,7 @@ public class Order implements Initializable {
         });
     }
 
+    // Method to add an item to the cart
     public void addToCart(ActionEvent event) {
         int appetizersQuantity = 0, entreesQuantity = 0, dessertsQuantity = 0, drinksQuantity = 0;
         // Get the selected item from the listview
@@ -239,6 +250,7 @@ public class Order implements Initializable {
         Item selectedDessertsItem = dessertsList.getSelectionModel().getSelectedItem();
         Item selectedDrinksItem = drinksList.getSelectionModel().getSelectedItem();
 
+        // Error handling
         if (appetizersQuantityField.getText().length() < 0 && selectedAppetizersItem == null) {
             Error.setError("Please select an appetizer and enter a valid quantity (Above 0)", errorLabel);
             Error.setTextFieldErrorBorder(appetizersQuantityField);
@@ -275,6 +287,7 @@ public class Order implements Initializable {
             Error.removeTextFieldErrorBorder(drinksQuantityField);
         }
 
+        // Get the quantity from the quantity field and convert it to an integer
         if (appetizersQuantityField.getText().length() > 0 && selectedAppetizersItem != null) {
             appetizersQuantity = Integer.parseInt(appetizersQuantityField.getText());
         }
@@ -322,6 +335,7 @@ public class Order implements Initializable {
         Controller.changeScene("/com/troo/screens/Cart.fxml", event);
     }
 
+    // Set the order screen to dark mode
     public void setDarkModeOrderScreen(ActionEvent event) {
         // see if the checkbox is selected
         if (darkModeCheckBox.isSelected()) {
@@ -350,7 +364,6 @@ public class Order implements Initializable {
             SetDarkMode.setDarkModeCheckBox(darkModeCheckBox);
             SetDarkMode.setPrimaryDarkModeButton(addToCartButton);
             SetDarkMode.setSecondaryDarkModeButton(backButton);
-
         } else {
             SetDarkMode.removeDarkModeTextField(appetizersQuantityField);
             SetDarkMode.removeDarkModeTextField(entreesQuantityField);

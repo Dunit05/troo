@@ -1,3 +1,6 @@
+// Name: Tommy
+// Sprint:
+
 package com.troo.controllers;
 
 import java.io.File;
@@ -24,9 +27,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import com.troo.controllers.util.Email;
+import com.troo.controllers.util.Error;
 
 public class Checkout implements Initializable {
 
+    // Get all the FXML elements
     @FXML
     Label errorLabel, subtotal, tax, total, checkoutLabel, checkoutInfoLabel, cardNumberLabel, cardDateLabel,
             cardCVCLabel, cardInfoLabel, helpLabel, nameLabel, emailLabel, phoneLabel, addressLabel;
@@ -37,6 +42,7 @@ public class Checkout implements Initializable {
     @FXML
     CheckBox darkModeCheckBox;
 
+    // Override the initialize method to load all the page data
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Prefill the users information
@@ -51,32 +57,40 @@ public class Checkout implements Initializable {
         total.setText("Total: $" + StorageBucket.getCartTotalWithTax());
     }
 
+    // Method to handel the users payment
     public void pay(ActionEvent event) {
         // Check if the user has entered all the information
         if (name.getText().isEmpty() || email.getText().isEmpty()
                 || phone.getText().isEmpty() || address.getText().isEmpty()
                 || cardNumber.getText().isEmpty() || cardDate.getText().isEmpty()
                 || cvc.getText().isEmpty()) {
-            errorLabel.setText("Please fill out all the information");
+            Error.setError("Please fill out all the information", errorLabel);
             return;
+        } else {
+            Error.removeError(errorLabel);
         }
-
         // Check if the card number is valid
         if (cardNumber.getText().length() != 16) {
-            errorLabel.setText("Please enter a valid card number");
+            Error.setError("Please enter a valid card number", errorLabel);
             return;
+        } else {
+            Error.removeError(errorLabel);
         }
 
         // Check if the card date is valid
         if (cardDate.getText().length() != 5) {
-            errorLabel.setText("Please enter a valid card date");
+            Error.setError("Please enter a valid card date", errorLabel);
             return;
+        } else {
+            Error.removeError(errorLabel);
         }
 
         // Check if the cvc is valid
         if (cvc.getText().length() != 3) {
-            errorLabel.setText("Please enter a valid cvc");
+            Error.setError("Please enter a valid cvc", errorLabel);
             return;
+        } else {
+            Error.removeError(errorLabel);
         }
 
         String receiptNumber = GenerateCode.receiptCode();
@@ -101,8 +115,12 @@ public class Checkout implements Initializable {
             }
         }
 
+        System.out.println("Times: " + times);
+
         // Get the largest number
         double largest = times[times.length - 1];
+
+        System.out.println("Largest: " + largest);
 
         ArrayList<String> restaurants = new ArrayList<String>();
 
@@ -122,11 +140,15 @@ public class Checkout implements Initializable {
             totalDisTime += dis;
         }
 
+        // !
+        System.out.println("Total Distance Time: " + totalDisTime);
+
         // Add up the total time
         double totalTime = largest + totalDisTime;
 
         StorageBucket.setDeliveryTime(totalTime);
 
+        // Write the transaction to the file
         try {
             File file = new File("src/main/resources/com/troo/data/transaction_data/transactions.txt");
             FileWriter writer = new FileWriter(file, true);
@@ -166,10 +188,8 @@ public class Checkout implements Initializable {
         Controller.changeScene("/com/troo/screens/Cart.fxml", event);
     }
 
-    // Andrew dark mode
     // Set the dark mode for the Home screen
     public void setDarkModeCheckoutScreen(ActionEvent event) {
-        // see if the checkbox is selected
         if (darkModeCheckBox.isSelected()) {
             SetDarkMode.setDarkModeTextField(name);
             SetDarkMode.setDarkModeTextField(email);

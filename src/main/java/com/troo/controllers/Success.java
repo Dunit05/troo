@@ -1,3 +1,5 @@
+// Name: Tomm
+// Sprint: 
 package com.troo.controllers;
 
 import java.io.File;
@@ -18,6 +20,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Success implements Initializable {
+
+    // FXML Variables
     @FXML
     Label orderNumber, greetingLabel, deliveryTime, orLabel, helpLabel;
 
@@ -30,12 +34,14 @@ public class Success implements Initializable {
     @FXML
     Button homeButton, logoutButton;
 
+    // Initialize the success screen with an override
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // Set the labels
         orderNumber.setText("Order Number #" + StorageBucket.getReceiptNumber());
         deliveryTime.setText("Your order will be delivered in " + StorageBucket.getDeliveryTime() + " minutes");
 
-        // set the qr code image to the qr code (transaction code.png)
+        // set the qr code image to the qr code (transactionNumber.png)
         String filePath = "src/main/resources/com/troo/data/transaction_data/" + StorageBucket.getTransactionNumber()
                 + ".png";
         File file = new File(filePath);
@@ -44,16 +50,19 @@ public class Success implements Initializable {
 
     }
 
+    // Change the scene to the home screen
     public void home(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Home.fxml", event);
     }
 
+    // Change the scene to the login screen
     public void logout(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Login.fxml", event);
         StorageBucket.resetCart();
         StorageBucket.resetUser();
     }
 
+    // Set the dark mode for the success screen
     public void setDarkModeSuccessScreen(ActionEvent event) {
         if (darkModeCheckBox.isSelected()) {
             SetDarkMode.setDarkModeLabel(orderNumber);

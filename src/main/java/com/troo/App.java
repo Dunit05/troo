@@ -1,6 +1,7 @@
 // Names: Tommy, Andrew, Suchir
 // Date due: Janurary, 18th, 2023
 // tróo by Furot
+// Sprint: 3
 
 package com.troo;
 
@@ -11,8 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
-
-import com.troo.controllers.util.DistanceMatrix;
 
 public class App extends Application {
     // Override the start method in the Application class

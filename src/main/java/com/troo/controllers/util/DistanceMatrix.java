@@ -1,3 +1,6 @@
+// Name: Tommy
+// Sprint:
+
 package com.troo.controllers.util;
 
 import java.io.IOException;
@@ -17,13 +20,14 @@ import okhttp3.HttpUrl.Builder;
 
 public class DistanceMatrix {
 
+    // Method to get the time between two addresses
     public static double getTime(String fromAddress, String toAddress) {
-
+        // // Create a new JSON parser and objects
         JSONParser parser = new JSONParser();
         Object obj;
         JSONObject jsonObject;
-        JSONArray results;
-        JSONObject result;
+        // JSONArray results;
+        // JSONObject result;
 
         // Open a new dotenv file to get the Google Maps API key
         Dotenv dotenv = Dotenv.load();
@@ -82,4 +86,5 @@ public class DistanceMatrix {
         // Return an empty string if the request fails
         return 0;
     }
+
 }

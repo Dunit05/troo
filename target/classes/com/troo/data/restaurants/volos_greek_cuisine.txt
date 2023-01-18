@@ -1,294 +1,308 @@
 --Data--
-5 Star
+4.5 Star
 Upscale Greek cuisine & wines in a refined, contemporary setting.
 133 Richmond St W, Toronto, ON M5H 2L3
 
 --Appetizer--
 [Horiatiki Salad
-19.00
+7.00
 Greek salad with tomatoes, cucumbers, red onions, kalamata olives, bell peppers, and feta cheese with a red wine vinaigrette
 n/a
 5
 horiatiki-salad]
 --Appetizer--
 [Grilled Octopus
-28.00
+9.00
 Served with cucumbers, olives, red onions and Greek yogurt
 n/a
 10
 grilled-octopus]
 --Appetizer--
 [Saganaki
-19.00
+6.00
 Ouzo flambeed kefalotyri cheese
 n/a
-1
+5
 saganaki]
 --Appetizer--
-[Tiger Prawn Saganaki
-23.00
-Prepared in a ouzo tomato sauce with feta and kalamata olives, green peppers
-n/a
-1
-tiger-prawn-saganaki]
---Appetizer--
 [Dolmades
-19.00
+6.50
 Grape leaves stuffed with short grain rice, fresh herbs, golden raisins and tzatziki, kalamata olives
 n/a
-1
+8
 dolmades]
 --Appetizer--
-[Soutzoukakia
-16.00
-Ground beef meatballs spiced with cumin, cinnamon, tomato sauce and feta cheese
-n/a
-1
-soutzoukakia]
---Appetizer--
-[Greek Caesar Salad
-18.00
-A Greek version of Caesar Salad with dried cranberries, pita croutons, Greek yogurt, anchovy vinaigrette
-n/a
-1
-greek-caesar-salad]
---Appetizer--
-[Grilled Calamari
-26.00
-Roasted with bell peppers, onion, black olives, feta, red grape vinaigrette
-n/a
-1
-grilled-calamari]
---Appetizer--
-[Fresh Spiced Lamb Sausage
-26.00
-Served with bell peppers, onions, tomatoes, mint, feta cheese
-n/a
-1
-fresh-spiced-lamb-sausage]
---Appetizer--
 [Tzatziki
-12.00
+4.00
 Strained Greek yogurt made of cow’s and goat’s milk with cucumbers, dill, and garlic
 n/a
-1
+5
 tzatziki]
 --Appetizer--
 [Taramasalata
-12.00
+8.50
 Carp roe caviar, lemon juice, crusty bread, olive oils
 n/a
-1
+5
 taramasalata]
 --Appetizer--
-[Melitzanosalata
-12.00
-Made with roasted eggplant, garlic, lemon juice, tahini, walnut
-vegan
-1
-melitzanosalata]
---Appetizer--
 [Tirokafteri
-12.00
+8.50
 Spicy Greek feta spread with roasted red peppers
 n/a
-1
+5
 tirokafteri]
 --Appetizer--
 [Hummus
-30.00
+7.50
 Chickpeas, tahini, garlic, lemon juice
 n/a
-1
+5
 hummus]
 --Appetizer--
-[Authentic Greek Feta cheese
-12.00
-Pure sheep’s and goat’s milk
+[Baked feta
+9.50
+Feta cheese baked with tomatoes, onions, and herbs
 n/a
-1
+8
 authentic-greek-feta-cheese]
+--Appetizer--
+[Spanakopita
+9.50
+Spinach and feta cheese wrapped in phyllo dough
+n/a
+8
+spanakopita]
+--Appetizer--
+[Gigandes Plaki
+15.00
+Baked beans with tomatoes, onions, and herbs
+n/a
+5
+gigandes-plaki]
 
 --Entree--
 [Avgolemono Soup
-12.00
+10.00
 Traditional Greek soup with chicken, fresh herbs, egg, lemon juice, rice
-gluten-free 
-1
+gluten-free
+10
 avgolemono-soup]
 --Entree--
-[Fresh Baked Halibut
-45.00
-Served with mussels, fennel, cherry tomatoes in ouzo saffron broth
+[Grilled Octopus
+15.00
+Served with cucumbers, olives, red onions and Greek yogurt
 n/a
-1
-fresh-baked-halibut]
+10
+grilled-octopus]
 --Entree--
-[Sesame-Crusted Pacific Salmon
-36.00
-Sesame-crusted pacific salmon with feta cheese, braised spinach, ladolemono
+[Spanakopita
+11.50
+Spinach and feta cheese wrapped in phyllo dough
 n/a
-1
-sesame-crusted-pacific-salmon]
+10
+spanakopita]
 --Entree--
-[Fisherman's Stew
-42.00
-Atlantic cod, salmon, tiger shrimp, mussels, with a braised fennel saffron broth
+[Grilled Lamb Chops
+17.50
+Served with Greek salad, tzatziki, and pita bread
 n/a
-1
-fishermans-stew]
---Entree--
-[Volos Warm Seafood Salad
-34.00
-Atlantic salmon, tiger shrimp, grilled octopus, mixed greens, Greek yogurt dressing
-n/a
-1
-volos-warm-seafood-salad]
---Entree--
-[Braised Lamb Shank
-38.00
-Served with rosemary, root vegetables, and creamy whipped potatoes
-n/a
-1
-braised-lamb-shank]
---Entree--
-[Grilled Organic Chicken Breast
-32.00
-Grilled chicken breast served with horiatiki salad, lemon potatoes, tzatziki
-n/a
-1
-grilled-organic-chicken-breast]
---Entree--
-[Grilled Whole Mediterranean Sea Bass
-44.00
-Served with root vegetables, horiatiki salad, and roasted potatoes
-n/a
-1
-grilled-whole-mediterranean-sea-bass]
+10
+grilled-lamb-chops]
 --Entree--
 [Moussaka
-29.00
-Organic ground beef, grilled eggplant, and baked Yukon potatoes with Greek cheese and béchamel sauce
+15.50
+Layers of eggplant, potatoes, ground beef, and béchamel sauce
 n/a
-1
+10
 moussaka]
 --Entree--
-[Orecchiette Pasta
-26.00
-Tiger shrimp, Swiss chard, cherry tomatoes, black olives, basil, and feta cheese
+[Grilled Chicken Souvlaki
+18.50
+Served with Greek salad, tzatziki, and pita bread
 n/a
-1
-orecchiette-pasta]
+10
+grilled-chicken-souvlaki]
 --Entree--
-[Gluten-Free Penne
-28.00
-Atlantic salmon, wilted greens, Kalamata olives, ouzo tomatoes, feta cheese
-gluten-free
-1
-gluten-free-penne]
+[Grilled Lamb Souvlaki
+18.50
+Served with Greek salad, tzatziki, and pita bread
+n/a
+10
+grilled-lamb-souvlaki]
+--Entree--
+[Fakes (Lentils)
+11.00
+Lentils with tomatoes, onions, and herbs
+n/a
+10
+lentil]
+--Entree--
+[Lemonati Kotoleta
+13.00
+Breaded pork chop with lemon sauce, served with Greek salad, tzatziki, and pita bread
+n/a
+10
+lemonati-kotoleta]
+--Entree--
+[Kalamata Chicken
+17.50
+Grilled chicken breast marinated in lemon juice, olive oil, and oregano, served with Greek salad, tzatziki, and pita bread
+n/a
+10
+kalamata-chicken]
+--Entree--
+[Paidakia
+18
+Grilled lamb chops served with Greek salad, tzatziki, and pita bread
+n/a
+10
+paidakia]
 
 --Dessert--
-[Saffron Ice Cream
-12.00
-With pistachios, rose water, vanilla
+[Galaktoboureko
+9.00
+Phyllo dough filled with custard and baked in honey syrup
 n/a
-1
-saffron-ice-cream]
+10
+galaktoboureko]
 --Dessert--
-[Dark Chocolate Mousse
-12.00
-Semi-sweet dark chocolate mousse with rose water
-n/a
-1
-dark-chocolate-mousse]
---Dessert--
-[Baklava
-12.00
-Phyllo pastry and crushed nuts with honey syrup
-n/a
-1
-baklava]
---Dessert--
-[Greek yogurt
-12.00
-Greek yogurt served with fresh berries and attiki honey
-n/a
-1
-greek-yogurt]
 [Loukoumades
 10.00
-Greek doughnuts with honey syrup
+Greek doughnuts with honey syrup (30 count)
 n/a
-1
+20
 loukoumades]
+--Dessert--
+[Karithopita 
+8.50
+Walnut cake made with raisins, fresh walnuts, cinnamon and sweetened with simple syrup.
+Contains nuts
+10
+karithopita]
+--Dessert--
+[Karidopita
+8.50
+Walnut cake made with raisins, fresh walnuts, cinnamon and sweetened with simple syrup.
+Contains nuts
+10
+karidopita]
+--Dessert--
+[Greek Yogurt Cheesecake
+8.00
+Creamy cheesecake prepared with real Greek yogurt set on a walnut, honey graham cracker crumb base and drizzled with Greek honey and topped with crumbled baklava.
+Contains nuts
+10
+greek-yogurt-cheesecake]
+--Dessert--
+[Baklava Ice Cream
+9.00
+Baklava infused ice cream with a baklava crumble
+Contains nuts
+10
+baklava-ice-cream]
+--Dessert--
+[Ravani
+8.00
+A traditional Greek citrus cake with a hint of vanilla topped with slivered almonds and sweetened with simple syrup.
+n/a
+10
+ravani]
+--Dessert--
+[Rizogalo
+9.00
+Rice pudding with cinnamon and honey
+n/a
+10
+rizogalo]
+--Dessert--
+[Dark Chocolate Mousse
+7.00
+Semi-sweet dark chocolate mousse with rose water
+n/a
+8
+dark-chocolate-mousse]
+[Saffron Ice Cream
+6.50
+With pistachios, rose water, vanilla
+n/a
+8
+saffron-ice-cream]
 
 --Drink--
+[Portokalada (Orange)
+2.50
+Portokalada is a traditional Greek orange-based sparkling drink made from orange peel and sugar. It is often served as a digestif, and is known for its sweet and intense orange flavor. The liqueur is usually made by infusing orange peels in spirit and then sweetening the mixture with sugar. Comes in 750ml
+n/a
+1
+portokalada-loux-orange]
+--Drink--
+[Portokalada (Cherry)
+2.50
+Portokalada is a traditional Greek orange-based sparkling drink made from orange peel and sugar. It is often served as a digestif, and is known for its sweet and intense orange flavor. The liqueur is usually made by infusing orange peels in spirit and then sweetening the mixture with sugar. Comes in 250ml. (Cherry Flavour)
+n/a
+1
+portokalada-loux-cherry]
+--Drink--
 [Ouzo
-12.00
-Ouzo is a clear anise-flavored spirit, traditionally made from the distillation of grape pomace, 2oz
+3.00
+Ouzo is a Greek anise-flavored aperitif. It is traditionally served chilled, neat or on the rocks, with water, or with ice and lemon. (Shot)
 n/a
 1
 ouzo]
 --Drink--
-[Dirty Martini
-12.00
-Gin or Vodka, Dry Vermouth, Olive Juice, 3oz
+[Tsipuro
+3.00
+Tsipouro is a Greek spirit made from grape pomace. It is traditionally served neat or on the rocks, with water, or with ice and lemon.(Shot)
 n/a
 1
-dirty-martini]
---Drink--
-[Moschofilero White Wine
-12.00
-Moschofilero is a white wine grape variety grown primarily in the Peloponnese region of Greece. Known for its floral and fruity aromas, it is often compared to Moscato and produces wines with a light to medium body and high acidity.
-n/a
-1
-moschofilero-white-wine]
---Drink--
-[White Sangria
-12.00
-White wine, orange juice, lemon juice, orange slices, lemon slices, and sugar
-n/a
-1
-moschofilero-white-wine]
---Drink--
-[Red Sangria
-12.00
-Red wine, orange juice, lemon juice, orange slices, lemon slices, and sugar
-n/a
-1
-red-sangria]
---Drink--
-[Agiorgitiko Red Wine
-12.00
-Agiorgitiko is a red wine grape variety grown primarily in the Nemea region of Greece. It is known for its rich, full-bodied wines with a high alcohol content, and often exhibits flavors and aromas of dark fruit such as black cherry and blackberry.
-n/a
-1
-agiorgitiko-red-wine]
---Drink--
-[Champange, G.H.Mumm, Carte Classique, France N.V
-100.00
-An Assemblage of Chardonnay, Pinot Noir and Pinot Meunier. Dry with fine creme and elegant finish. 750ml
-n/a
-1
-champange-GHMumm-carte-classique-france-nv]
---Drink--
-[San Pellegrino Sparkling Mineral Water
-6.00
-San Pellegrino, comes in 750ml
-n/a
-1
-san-pellegrino-sparkling-mineral-water]
+tsipuro]
 --Drink--
 [Sprite
-6.00
+2.50
 Sprite, comes in 750ml
 n/a
 1
 sprite]
 --Drink--
-[Portokalada (Orange)
-6.00
-Portokalada is a traditional Greek orange-based sparkling drink made from orange peel and sugar. It is often served as a digestif, and is known for its sweet and intense orange flavor. The liqueur is usually made by infusing orange peels in spirit and then sweetening the mixture with sugar. Comes in 750ml
+[Pepsi
+2.50
+Pepsi, comes in 750ml
 n/a
 1
-portokalada-loux-orange]
+pepsi]
+--Drink--
+[San Pellegrino Sparkling Mineral Water
+2.50
+San Pellegrino, comes in 750ml
+n/a
+1
+san-pellegrino-sparkling-mineral-water]
+--Drink--
+[Perrier Mineral Sparkling Water
+2.50
+Perrier, comes in 750ml
+n/a
+1
+perrier-mineral-sparkling-water]
+--Drink--
+[Greek Coffee
+4.00
+Greek coffee is a strong coffee made with finely ground coffee beans and served in a small cup. It is traditionally prepared with a briki, a special pot with a long handle and a narrow spout.
+n/a
+4
+greek-coffee]
+--Drink--
+[Frappé
+4.00
+Frappé is a Greek iced coffee drink made with instant coffee, sugar, and milk. It is served cold and is often topped with whipped cream and cinnamon.
+n/a
+4
+frappe]
+--Drink--
+[Champange, G.H.Mumm, Carte Classique, France N.V
+100.00
+An Assemblage of Chardonnay, Pinot Noir and Pinot Meunier. Dry with fine creme and elegant finish.
+n/a
+1
+champange-GHMumm-carte-classique-france-nv]

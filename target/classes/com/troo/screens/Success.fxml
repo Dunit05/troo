@@ -73,7 +73,7 @@
                               <Font name="Calibri" size="15.0" />
                            </font>
                         </Label>
-                        <Button fx:id="logoutLabel" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="310.0" styleClass="btn-primary" text="Logout">
+                        <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="310.0" styleClass="btn-primary" text="Logout">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>

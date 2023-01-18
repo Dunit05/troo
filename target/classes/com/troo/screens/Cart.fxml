@@ -85,7 +85,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                            <children>
-                              <Button fx:id="backButton" mnemonicParsing="false" prefHeight="54.0" prefWidth="253.0" styleClass="btn-secondary" text="Back" />
+                              <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" prefHeight="54.0" prefWidth="253.0" styleClass="btn-secondary" text="Back" />
                               <Button fx:id="payButton" layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#toCheckout" prefHeight="54.0" prefWidth="253.0" styleClass="btn-primary" text="Pay Now">
                                  <HBox.margin>
                                     <Insets left="200.0" />
