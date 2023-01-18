@@ -27,7 +27,7 @@ public class GenerateReceipt {
     public static final float COL = 300f, DOUBLE_COL = 600f, TWO_COL = 350f, SEC_TWO_COL = 150f, THREE_COL = 190f;
     public static final int MAX_ID = 1000000, ONE_HUNDRED = 100, BORDER_SIZE = 1, FONT_SIZE = 10,
             IMG_WIDTH = 100,
-            IMG_HEIGHT = 100, TAX_RATE = 13, CONTRACTOR_RATE = 20;
+            IMG_HEIGHT = 100, TAX_RATE = 13, DELIVERY_FEE = 25;
 
     public static void generateReceipt() {
         // Formatting for receipt columns
@@ -131,6 +131,9 @@ public class GenerateReceipt {
             // Adding the final transaction information
             paymentInfo.addCell(documentText("Total Quantity:"));
             paymentInfo.addCell(documentText(String.valueOf(StorageBucket.getCartAmount())));
+
+            paymentInfo.addCell(documentText("Devliery Fee:"));
+            paymentInfo.addCell(documentText("$" + String.valueOf(StorageBucket.getDeliveryFee())));
 
             paymentInfo.addCell(documentText("Tax:"));
             paymentInfo.addCell(documentText(TAX_RATE + "%"));

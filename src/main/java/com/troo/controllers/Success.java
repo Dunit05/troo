@@ -72,8 +72,8 @@ public class Success implements Initializable {
             SetDarkMode.setDarkModeLabel(orLabel);
             SetDarkMode.setDarkModeLabel(helpLabel);
             SetDarkMode.setDarkModeCheckBox(darkModeCheckBox);
-            SetDarkMode.setPrimaryDarkModeButton(homeButton);
-            SetDarkMode.setSecondaryDarkModeButton(logoutButton);
+            SetDarkMode.setPrimaryDarkModeButton(logoutButton);
+            SetDarkMode.setSecondaryDarkModeButton(homeButton);
         } else {
             SetDarkMode.removeDarkModeLabel(orderNumber);
             SetDarkMode.removeDarkModeLabel(greetingLabel);
@@ -81,8 +81,8 @@ public class Success implements Initializable {
             SetDarkMode.removeDarkModeLabel(orLabel);
             SetDarkMode.removeDarkModeLabel(helpLabel);
             SetDarkMode.removeDarkModeCheckBox(darkModeCheckBox);
-            SetDarkMode.removePrimaryDarkModeButton(homeButton);
-            SetDarkMode.removeSecondaryDarkModeButton(logoutButton);
+            SetDarkMode.removePrimaryDarkModeButton(logoutButton);
+            SetDarkMode.removeSecondaryDarkModeButton(homeButton);
         }
     }
 }

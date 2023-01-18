@@ -22,6 +22,7 @@ import com.troo.controllers.util.StorageBucket;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -33,14 +34,17 @@ public class Checkout implements Initializable {
 
     // Get all the FXML elements
     @FXML
-    Label errorLabel, subtotal, tax, total, checkoutLabel, checkoutInfoLabel, cardNumberLabel, cardDateLabel,
-            cardCVCLabel, cardInfoLabel, helpLabel, nameLabel, emailLabel, phoneLabel, addressLabel;
+    Label errorLabel, subtotal, tax, total, deliveryFee, checkoutLabel, checkoutInfoLabel, cardNumberLabel,
+            cardDateLabel, cardCVCLabel, cardInfoLabel, helpLabel, nameLabel, emailLabel, phoneLabel, addressLabel;
 
     @FXML
     TextField name, email, phone, address, cardNumber, cardDate, cvc;
 
     @FXML
     CheckBox darkModeCheckBox;
+
+    @FXML
+    Button payButton, backButton;
 
     // Override method to override the default page data with the checkout data
     @Override
@@ -55,6 +59,7 @@ public class Checkout implements Initializable {
         subtotal.setText("Subtotal: $" + StorageBucket.getCartTotal());
         tax.setText("Tax: " + StorageBucket.TAX + "%");
         total.setText("Total: $" + StorageBucket.getCartTotalWithTax());
+        deliveryFee.setText("Delivery Fee: $" + StorageBucket.getDeliveryFee());
     }
 
     // Method to handel the users payment
@@ -204,6 +209,7 @@ public class Checkout implements Initializable {
             SetDarkMode.setDarkModeLabel(subtotal);
             SetDarkMode.setDarkModeLabel(tax);
             SetDarkMode.setDarkModeLabel(total);
+            SetDarkMode.setDarkModeLabel(deliveryFee);
             SetDarkMode.setDarkModeLabel(checkoutLabel);
             SetDarkMode.setDarkModeLabel(checkoutInfoLabel);
             SetDarkMode.setDarkModeLabel(cardNumberLabel);
@@ -215,6 +221,8 @@ public class Checkout implements Initializable {
             SetDarkMode.setDarkModeLabel(emailLabel);
             SetDarkMode.setDarkModeLabel(phoneLabel);
             SetDarkMode.setDarkModeLabel(addressLabel);
+            SetDarkMode.setPrimaryDarkModeButton(payButton);
+            SetDarkMode.setSecondaryDarkModeButton(backButton);
         } else {
             SetDarkMode.removeDarkModeTextField(name);
             SetDarkMode.removeDarkModeTextField(email);
@@ -227,6 +235,7 @@ public class Checkout implements Initializable {
             SetDarkMode.removeDarkModeLabel(subtotal);
             SetDarkMode.removeDarkModeLabel(tax);
             SetDarkMode.removeDarkModeLabel(total);
+            SetDarkMode.removeDarkModeLabel(deliveryFee);
             SetDarkMode.removeDarkModeLabel(checkoutLabel);
             SetDarkMode.removeDarkModeLabel(checkoutInfoLabel);
             SetDarkMode.removeDarkModeLabel(cardNumberLabel);
@@ -238,6 +247,8 @@ public class Checkout implements Initializable {
             SetDarkMode.removeDarkModeLabel(emailLabel);
             SetDarkMode.removeDarkModeLabel(phoneLabel);
             SetDarkMode.removeDarkModeLabel(addressLabel);
+            SetDarkMode.removePrimaryDarkModeButton(payButton);
+            SetDarkMode.removeSecondaryDarkModeButton(backButton);
         }
     }
 }
