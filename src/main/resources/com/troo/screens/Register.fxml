@@ -219,7 +219,7 @@
                                     <Insets right="10.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="registerButton" mnemonicParsing="false" prefHeight="46.0" prefWidth="238.0" styleClass="btn-primary" text="Register">
+                              <Button fx:id="registerButton" mnemonicParsing="false" onAction="#register" prefHeight="46.0" prefWidth="238.0" styleClass="btn-primary" text="Register">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>

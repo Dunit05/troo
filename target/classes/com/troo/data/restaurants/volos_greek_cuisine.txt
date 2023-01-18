@@ -13,7 +13,7 @@ horiatiki-salad]
 --Appetizer--
 [Grilled Octopus
 9.00
-Served with cucumbers, olives, red onions and Greek yogurt
+Grilled Octopus served with cucumbers, olives, red onions and Greek yogurt
 n/a
 10
 grilled-octopus]
@@ -21,13 +21,13 @@ grilled-octopus]
 [Saganaki
 6.00
 Ouzo flambeed kefalotyri cheese
-n/a
+Contains dairy
 5
 saganaki]
 --Appetizer--
 [Dolmades
 6.50
-Grape leaves stuffed with short grain rice, fresh herbs, golden raisins and tzatziki, kalamata olives
+Grape leaves stuffed with short grain rice, fresh herbs, ground meat
 n/a
 8
 dolmades]
@@ -35,35 +35,35 @@ dolmades]
 [Tzatziki
 4.00
 Strained Greek yogurt made of cow’s and goat’s milk with cucumbers, dill, and garlic
-n/a
+Contains dairy
 5
 tzatziki]
 --Appetizer--
 [Taramasalata
 8.50
-Carp roe caviar, lemon juice, crusty bread, olive oils
-n/a
+Carp roe caviar served with lemon juice, crusty bread, and olive oils
+Contains fish
 5
 taramasalata]
 --Appetizer--
 [Tirokafteri
 8.50
-Spicy Greek feta spread with roasted red peppers
+Spicy Greek feta spread with roasted red peppers and olive oil
 n/a
 5
 tirokafteri]
 --Appetizer--
 [Hummus
 7.50
-Chickpeas, tahini, garlic, lemon juice
-n/a
+A chickpea dip, with tahini, garlic, lemon juice
+Contains tahini
 5
 hummus]
 --Appetizer--
 [Baked feta
 9.50
-Feta cheese baked with tomatoes, onions, and herbs
-n/a
+Feta cheese baked with tomatoes, onions, and herbs, served with olive oil and crusty bread
+Contains dairy
 8
 authentic-greek-feta-cheese]
 --Appetizer--
@@ -91,7 +91,7 @@ avgolemono-soup]
 --Entree--
 [Grilled Octopus
 15.00
-Served with cucumbers, olives, red onions and Greek yogurt
+Grilled Octopus served with cucumbers, olives, red onions and Greek yogurt
 n/a
 10
 grilled-octopus]
@@ -105,7 +105,7 @@ spanakopita]
 --Entree--
 [Grilled Lamb Chops
 17.50
-Served with Greek salad, tzatziki, and pita bread
+Grilled lamb chops served with Greek salad, tzatziki, and pita bread
 n/a
 10
 grilled-lamb-chops]
@@ -113,20 +113,20 @@ grilled-lamb-chops]
 [Moussaka
 15.50
 Layers of eggplant, potatoes, ground beef, and béchamel sauce
-n/a
+Contains dairy
 10
 moussaka]
 --Entree--
 [Grilled Chicken Souvlaki
 18.50
-Served with Greek salad, tzatziki, and pita bread
+Grilled chicken souvlaki served with Greek salad, tzatziki, and pita bread
 n/a
 10
 grilled-chicken-souvlaki]
 --Entree--
 [Grilled Lamb Souvlaki
 18.50
-Served with Greek salad, tzatziki, and pita bread
+Grilled lamb souvlaki served with Greek salad, tzatziki, and pita bread
 n/a
 10
 grilled-lamb-souvlaki]
@@ -163,7 +163,7 @@ paidakia]
 [Galaktoboureko
 9.00
 Phyllo dough filled with custard and baked in honey syrup
-n/a
+Contains semolina
 10
 galaktoboureko]
 --Dessert--
@@ -205,7 +205,7 @@ baklava-ice-cream]
 [Ravani
 8.00
 A traditional Greek citrus cake with a hint of vanilla topped with slivered almonds and sweetened with simple syrup.
-n/a
+Contains nuts, semolina
 10
 ravani]
 --Dessert--
@@ -219,41 +219,41 @@ rizogalo]
 [Dark Chocolate Mousse
 7.00
 Semi-sweet dark chocolate mousse with rose water
-n/a
+Contains rose water
 8
 dark-chocolate-mousse]
 [Saffron Ice Cream
 6.50
-With pistachios, rose water, vanilla
-n/a
+Ice cream with pistachios, rose water, vanilla
+Contains nuts, dairy, rose water
 8
 saffron-ice-cream]
 
 --Drink--
 [Portokalada (Orange)
 2.50
-Portokalada is a traditional Greek orange-based sparkling drink made from orange peel and sugar. It is often served as a digestif, and is known for its sweet and intense orange flavor. The liqueur is usually made by infusing orange peels in spirit and then sweetening the mixture with sugar. Comes in 750ml
+Portokalada is a traditional Greek orange-based sparkling drink made from orange peel and sugar. Comes in 750ml
 n/a
 1
 portokalada-loux-orange]
 --Drink--
 [Portokalada (Cherry)
-2.50
-Portokalada is a traditional Greek orange-based sparkling drink made from orange peel and sugar. It is often served as a digestif, and is known for its sweet and intense orange flavor. The liqueur is usually made by infusing orange peels in spirit and then sweetening the mixture with sugar. Comes in 250ml. (Cherry Flavour)
+1.50
+Portokalada is a traditional Greek orange-based sparkling drink made from orange peel and sugar. Comes in 250ml. (Cherry Flavour)
 n/a
 1
 portokalada-loux-cherry]
 --Drink--
 [Ouzo
 3.00
-Ouzo is a Greek anise-flavored aperitif. It is traditionally served chilled, neat or on the rocks, with water, or with ice and lemon. (Shot)
+Ouzo is a Greek anise-flavored aperitif. (Shot)
 n/a
 1
 ouzo]
 --Drink--
 [Tsipuro
 3.00
-Tsipouro is a Greek spirit made from grape pomace. It is traditionally served neat or on the rocks, with water, or with ice and lemon.(Shot)
+Tsipouro is a Greek spirit made from grape pomace. (Shot)
 n/a
 1
 tsipuro]
@@ -288,21 +288,21 @@ perrier-mineral-sparkling-water]
 --Drink--
 [Greek Coffee
 4.00
-Greek coffee is a strong coffee made with finely ground coffee beans and served in a small cup. It is traditionally prepared with a briki, a special pot with a long handle and a narrow spout.
+Greek coffee is a strong coffee made with finely ground coffee beans and served in a small cup.
 n/a
 4
 greek-coffee]
 --Drink--
 [Frappé
 4.00
-Frappé is a Greek iced coffee drink made with instant coffee, sugar, and milk. It is served cold and is often topped with whipped cream and cinnamon.
+Frappé is a Greek iced coffee drink made with instant coffee, sugar, and milk, topped with whipped cream and cinnamon.
 n/a
 4
 frappe]
 --Drink--
 [Champange, G.H.Mumm, Carte Classique, France N.V
 100.00
-An Assemblage of Chardonnay, Pinot Noir and Pinot Meunier. Dry with fine creme and elegant finish.
+An Assemblage of Chardonnay, Pinot Noir and Pinot Meunier. Dry with fine crème and elegant finish.
 n/a
 1
 champange-GHMumm-carte-classique-france-nv]

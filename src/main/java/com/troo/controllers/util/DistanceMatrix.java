@@ -1,10 +1,11 @@
 // Name: Tommy
-// Sprint:
+// Sprint: 6
 
 package com.troo.controllers.util;
 
 import java.io.IOException;
 
+// Import the required libraries
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -22,16 +23,17 @@ public class DistanceMatrix {
 
     // Method to get the time between two addresses
     public static double getTime(String fromAddress, String toAddress) {
-        // // Create a new JSON parser and objects
+        // Create a new JSON parser and objects
         JSONParser parser = new JSONParser();
         Object obj;
         JSONObject jsonObject;
-        // JSONArray results;
-        // JSONObject result;
+        String durationNumber = "";
+        double durationValue = 0;
 
         // Open a new dotenv file to get the Google Maps API key
         Dotenv dotenv = Dotenv.load();
 
+        // API URL:
         // https://maps.googleapis.com/maps/api/distancematrix/json?origins=Washington%2C%20DC&destinations=New%20York%20City%2C%20NY&units=imperial&key=YOUR_API_KEY
 
         // Create an HTTPs request to maps.googleapis.com to predict the address
@@ -58,7 +60,8 @@ public class DistanceMatrix {
         try {
             Response response = client.newCall(request).execute();
 
-            // Parse the response
+            // Parse the response, to get the duration of the trip and exlude everything
+            // else in the body
             obj = parser.parse(response.body().string());
             jsonObject = (JSONObject) obj;
             JSONArray rows = (JSONArray) jsonObject.get("rows");
@@ -69,10 +72,10 @@ public class DistanceMatrix {
             String durationText = (String) duration.get("text");
 
             // Extract the number from the text
-            String durationNumber = durationText.substring(0, durationText.indexOf(" "));
+            durationNumber = durationText.substring(0, durationText.indexOf(" "));
 
             // Parse the number into a double
-            double durationValue = Double.parseDouble(durationNumber);
+            durationValue = Double.parseDouble(durationNumber);
 
             // Return the response
             return durationValue;

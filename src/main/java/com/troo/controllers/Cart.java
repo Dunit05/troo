@@ -1,5 +1,5 @@
 // Name: Tommy
-// Sprint:
+// Sprint: 5
 package com.troo.controllers;
 
 import java.net.URL;
@@ -36,10 +36,10 @@ public class Cart implements Initializable {
     @FXML
     CheckBox darkModeCheckBox;
 
-    // Override the initialize method to load all the page data
+    // Override method to override the default page data with the cart data
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // for every item in the StorageBucket.cart, add it to the cartList
+        // for every item in the StorageBucket.cart, add it to the cartList ListView
         for (Item item : StorageBucket.getCart()) {
             cartList.getItems().add(item);
         }
@@ -49,20 +49,24 @@ public class Cart implements Initializable {
                 "Amount of Items: " + StorageBucket.getCartAmount());
         subtotal.setText("Subtotal: $" + StorageBucket.getCartTotal());
 
-        // Set the cell factory for the cartList
+        // Set the cell factory for the cartList to display the item's image, name,
+        // price,
         cartList.setCellFactory(param -> new ListCell<Item>() {
             @Override
             protected void updateItem(Item item, boolean empty) {
                 super.updateItem(item, empty);
 
+                // If the item is empty, set the text and graphic to null, meaning no data will
+                // be shown in that cell
                 if (empty || item == null || item.getImagePath() == null) {
                     setText(null);
                     setGraphic(null);
                 } else {
+                    // If the item is not empty, set the text and graphic
                     String text = "Dish: " + item.getName() + "\nPrice: $" + item.getPrice() + "\nDescription: "
                             + item.getDescription() + "\nNutrition Notes: "
                             + item.getNutritionNotes() + "\nRestaurant: " + item.getRestaurantName();
-                    String imagePath = "https://images-furot-tech.netlify.app/" + item.getImagePath() + ".png";
+                    String imagePath = StorageBucket.serverUrl + item.getImagePath() + ".png";
                     Image image = new Image(imagePath);
                     ImageView imageView = new ImageView(image);
                     imageView.setFitHeight(80);
@@ -104,9 +108,9 @@ public class Cart implements Initializable {
         Controller.changeScene("/com/troo/screens/Checkout.fxml", event);
     }
 
+    // Andrew's code
     // Method to set the dark mode on the cart screen
     public void setDarkModeCartScreen(ActionEvent event) {
-        // see if the checkbox is selected
         if (darkModeCheckBox.isSelected()) {
             SetDarkMode.setDarkModeListView(cartList);
             SetDarkMode.setDarkModeLabel(amount);

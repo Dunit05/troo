@@ -5,6 +5,7 @@ package com.troo.controllers.menu;
 
 public class Item {
 
+    // Data Fields
     private String name, descprition, itemImagePath, nutritionNotes, restaurantName;
     private double price, prepTime;
 

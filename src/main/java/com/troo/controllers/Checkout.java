@@ -1,5 +1,5 @@
 // Name: Tommy
-// Sprint:
+// Sprint: 6
 
 package com.troo.controllers;
 
@@ -42,7 +42,7 @@ public class Checkout implements Initializable {
     @FXML
     CheckBox darkModeCheckBox;
 
-    // Override the initialize method to load all the page data
+    // Override method to override the default page data with the checkout data
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Prefill the users information
@@ -59,6 +59,12 @@ public class Checkout implements Initializable {
 
     // Method to handel the users payment
     public void pay(ActionEvent event) {
+        // Variables
+        double[] times = new double[StorageBucket.getCart().size()];
+        ArrayList<String> restaurants = new ArrayList<String>();
+        double largest = 0, totalDisTime = 0;
+        String receiptNumber = "", transactionNumber = "", qrCodeText = "", filePath = "";
+
         // Check if the user has entered all the information
         if (name.getText().isEmpty() || email.getText().isEmpty()
                 || phone.getText().isEmpty() || address.getText().isEmpty()
@@ -69,6 +75,7 @@ public class Checkout implements Initializable {
         } else {
             Error.removeError(errorLabel);
         }
+
         // Check if the card number is valid
         if (cardNumber.getText().length() != 16) {
             Error.setError("Please enter a valid card number", errorLabel);
@@ -93,18 +100,22 @@ public class Checkout implements Initializable {
             Error.removeError(errorLabel);
         }
 
-        String receiptNumber = GenerateCode.receiptCode();
-        String transactionNumber = GenerateCode.transactionCode();
+        // Generate the receipt number and transaction number
+        receiptNumber = GenerateCode.receiptCode();
+        transactionNumber = GenerateCode.transactionCode();
 
-        // ! Get Distance
-        // get the preperaion time from each item in cart, put it in an arry using
-        // Collection.sort() and get the largest number and store it in a variable
-        double[] times = new double[StorageBucket.getCart().size()];
+        // Set the transaction data
+        StorageBucket.setReceiptNumber(receiptNumber);
+        StorageBucket.setTransactionNumber(transactionNumber);
+
+        // ---- Complex algorithm to calculate the delivery time ----
+
+        // Get the prep times of each item in the cart, and set them to an array
         for (int i = 0; i < StorageBucket.getCart().size(); i++) {
             times[i] = StorageBucket.getCart().get(i).getPrepTime();
         }
 
-        // Sort the array using bubble sort
+        // Sort the prep times array using bubble sort
         for (int i = 0; i < times.length; i++) {
             for (int j = 0; j < times.length - 1; j++) {
                 if (times[j] > times[j + 1]) {
@@ -115,37 +126,29 @@ public class Checkout implements Initializable {
             }
         }
 
-        System.out.println("Times: " + times);
+        // Get the largest number, as that will be the longest prep time, and will be
+        // the prep time we use to caculate the delivery time
+        largest = times[times.length - 1];
 
-        // Get the largest number
-        double largest = times[times.length - 1];
-
-        System.out.println("Largest: " + largest);
-
-        ArrayList<String> restaurants = new ArrayList<String>();
-
-        // go through each item in the cart and see what restaurant it is from, and make
-        // an arrayList of the restaurants, if there are more than one restaurant in the
-        // cart, keep only on
+        // Go through each item in the cart and see what restaurant it is from, and make
+        // an arrayList of the restaurants
         for (int i = 0; i < StorageBucket.getCart().size(); i++) {
             if (!restaurants.contains(StorageBucket.getCart().get(i).getRestaurantName())) {
                 restaurants.add(StorageBucket.getCart().get(i).getRestaurantName());
             }
         }
 
-        double totalDisTime = 0;
         for (int i = 0; i < restaurants.size(); i++) {
             double dis = 0;
             dis = DistanceMatrix.getTime(restaurants.get(i), StorageBucket.getUserAddress());
             totalDisTime += dis;
         }
 
-        // !
-        System.out.println("Total Distance Time: " + totalDisTime);
-
-        // Add up the total time
+        // Add up the total time, which is the largest prep time added to the total
+        // distance time
         double totalTime = largest + totalDisTime;
 
+        // Set the delivery time
         StorageBucket.setDeliveryTime(totalTime);
 
         // Write the transaction to the file
@@ -160,18 +163,16 @@ public class Checkout implements Initializable {
             e.printStackTrace();
         }
 
-        StorageBucket.setReceiptNumber(receiptNumber);
-        StorageBucket.setTransactionNumber(transactionNumber);
-
-        String qrCodeText = "Transaction Number: " + transactionNumber;
-        String filePath = "src/main/resources/com/troo/data/transaction_data/" + transactionNumber + ".png";
+        // Create the QR code
+        qrCodeText = "Transaction Number: " + transactionNumber;
+        filePath = "src/main/resources/com/troo/data/transaction_data/" + transactionNumber + ".png";
         File qrFile = new File(filePath);
         QRCode.createQRImage(qrFile, qrCodeText);
+
+        // Generate the receipt
         GenerateReceipt.generateReceipt();
 
-        GenerateReceipt.generateReceipt();
-
-        // Send the email
+        // Send the email, containing the receipt
         Email email = new Email();
         email.sendEmailWithAttachment(StorageBucket.getUserEmail(), "Here is your receipt #" + receiptNumber,
                 "src/main/resources/com/troo/data/transaction_data/" + StorageBucket.getReceiptNumber() + ".pdf");
@@ -181,14 +182,15 @@ public class Checkout implements Initializable {
 
         // Change to thankyou screen
         Controller.changeScene("/com/troo/screens/Success.fxml", event);
-
     }
 
+    // Go back to the cart screen
     public void back(ActionEvent event) {
         Controller.changeScene("/com/troo/screens/Cart.fxml", event);
     }
 
-    // Set the dark mode for the Home screen
+    // Andrew's code
+    // Set the dark mode for the home screen
     public void setDarkModeCheckoutScreen(ActionEvent event) {
         if (darkModeCheckBox.isSelected()) {
             SetDarkMode.setDarkModeTextField(name);

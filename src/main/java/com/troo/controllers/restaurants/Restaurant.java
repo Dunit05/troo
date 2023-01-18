@@ -5,8 +5,10 @@ package com.troo.controllers.restaurants;
 
 public class Restaurant {
 
+    // Data Fields
     private String name, imagePath, rating, fileName, description, location;
 
+    // Constructors
     public Restaurant() {
         this.name = "";
         this.fileName = "";
@@ -26,6 +28,7 @@ public class Restaurant {
         this.location = loaction;
     }
 
+    // Getters and Setters
     public String getName() {
         return this.name;
     }
@@ -74,6 +77,7 @@ public class Restaurant {
         this.location = location;
     }
 
+    // toString
     public String toString() {
         return getName() + " " + getRating();
     }
