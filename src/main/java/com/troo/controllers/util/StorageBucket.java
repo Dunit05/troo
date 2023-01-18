@@ -18,6 +18,7 @@ public class StorageBucket {
     private static String transactionNumber;
     private static double totalTime;
     public final static double TAX = 0.13;
+    public final static double DELIVERY_FEE = 0.25;
     public final static String serverUrl = "https://images-furot-tech.netlify.app/";
 
     // Methods (Setters and Getters)
@@ -81,12 +82,22 @@ public class StorageBucket {
         return String.format("%.2f", total);
     }
 
-    public static String getCartTotalWithTax() {
+    public static double getDeliveryFee() {
         double total = 0;
         for (Item item : cart) {
             total += item.getPrice();
         }
-        total += total * TAX;
+        total = total * DELIVERY_FEE;
+        return total;
+    }
+
+    public static String getCartTotalWithTax() {
+        double total = 0, feeTotal = 0;
+        for (Item item : cart) {
+            total += item.getPrice();
+        }
+        feeTotal = total * DELIVERY_FEE;
+        total = total + feeTotal;
         return String.format("%.2f", total);
     }
 

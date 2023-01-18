@@ -100,7 +100,7 @@
                                     <Font name="Calibri" size="25.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="cardNumber" prefHeight="26.0" prefWidth="310.0" promptText="Address" styleClass="textbox">
+                              <TextField fx:id="cardNumber" prefHeight="26.0" prefWidth="310.0" promptText="Credit Card Number" styleClass="textbox">
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
@@ -110,7 +110,7 @@
                                     <Font name="Calibri" size="25.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="cardDate" layoutX="10.0" layoutY="328.0" prefHeight="26.0" prefWidth="310.0" promptText="Address" styleClass="textbox">
+                              <TextField fx:id="cardDate" layoutX="10.0" layoutY="328.0" prefHeight="26.0" prefWidth="310.0" promptText="Expiry Date" styleClass="textbox">
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
@@ -120,7 +120,7 @@
                                     <Font name="Calibri" size="25.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="cvc" layoutX="10.0" layoutY="390.0" prefHeight="26.0" prefWidth="310.0" promptText="Address" styleClass="textbox">
+                              <TextField fx:id="cvc" layoutX="10.0" layoutY="390.0" prefHeight="26.0" prefWidth="310.0" promptText="CVC" styleClass="textbox">
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
@@ -151,6 +151,11 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
+                              <Label fx:id="deliveryFee" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="10.0" layoutY="531.0" prefHeight="47.0" prefWidth="872.0" text="Total:" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
                               <Label fx:id="tax" alignment="CENTER_RIGHT" contentDisplay="BOTTOM" layoutX="10.0" layoutY="550.0" prefHeight="47.0" prefWidth="872.0" text="Total:" textAlignment="RIGHT" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
@@ -168,11 +173,11 @@
                         </VBox>
                         <HBox alignment="CENTER" prefHeight="74.0" prefWidth="872.0">
                            <VBox.margin>
-                              <Insets top="20.0" />
+                              <Insets />
                            </VBox.margin>
                            <children>
-                              <Button fx:id="backButton" mnemonicParsing="false" prefHeight="54.0" prefWidth="253.0" styleClass="btn-secondary" text="Back" />
-                              <Button layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#pay" prefHeight="54.0" prefWidth="253.0" styleClass="btn-primary" text="Pay Now">
+                              <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" prefHeight="54.0" prefWidth="253.0" styleClass="btn-secondary" text="Back" />
+                              <Button fx:id="payButton" layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#pay" prefHeight="54.0" prefWidth="253.0" styleClass="btn-primary" text="Pay Now">
                                  <HBox.margin>
                                     <Insets left="200.0" />
                                  </HBox.margin>
