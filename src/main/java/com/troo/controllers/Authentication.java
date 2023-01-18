@@ -115,6 +115,7 @@ public class Authentication {
             e.printStackTrace();
         }
 
+        // Set the user data in the storage bucket
         StorageBucket.setUser(email, firstName, lastName, phone, address);
 
         // Change the scene to the home screen
@@ -180,6 +181,7 @@ public class Authentication {
             Error.setError("We couldn't create your account", errorLabel);
         }
 
+        // Set the user data in the storage bucket
         StorageBucket.setUser(email, firstName, lastName, phone, address);
 
         // Send the welcome email

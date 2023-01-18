@@ -12,6 +12,7 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
+// Import all the necessary libraries for QR Code creation
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.common.BitMatrix;

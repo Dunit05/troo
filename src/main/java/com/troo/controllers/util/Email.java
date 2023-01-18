@@ -56,9 +56,9 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
             request.setBody(mail.build());
             Response response = sg.api(request);
             // For debugging purposes
-            System.out.println(response.getStatusCode());
-            System.out.println(response.getBody());
-            System.out.println(response.getHeaders());
+            // System.out.println(response.getStatusCode());
+            // System.out.println(response.getBody());
+            // System.out.println(response.getHeaders());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -104,9 +104,9 @@ public class Email extends com.sendgrid.helpers.mail.objects.Email {
             request.setBody(mail.build());
             Response response = sg.api(request);
             // For debugging purposes
-            System.out.println(response.getStatusCode());
-            System.out.println(response.getBody());
-            System.out.println(response.getHeaders());
+            // System.out.println(response.getStatusCode());
+            // System.out.println(response.getBody());
+            // System.out.println(response.getHeaders());
         } catch (IOException ex) {
             ex.printStackTrace();
         }

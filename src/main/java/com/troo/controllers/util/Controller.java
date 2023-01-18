@@ -14,12 +14,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-// Class to change scenes
 public class Controller {
-    // Change the scene, takes in the path to the fxml file and the ActionEven
 
+    // Change the scene, takes in the path to the fxml file and the ActionEvent
     public static void changeScene(String path, ActionEvent event) {
+        // Try to change the scene
         try {
+            // Set the root node to the fxml file
             Parent root = FXMLLoader.load(Controller.class.getResource(path));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -30,8 +31,11 @@ public class Controller {
         }
     }
 
+    // Change the scene, takes in the path to the fxml file and the MouseEvent
     public static void changeToOrderScene(String path, MouseEvent event) {
+        // Try to change the scene
         try {
+            // Set the root node to the fxml file
             Parent root = FXMLLoader.load(Controller.class.getResource(path));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

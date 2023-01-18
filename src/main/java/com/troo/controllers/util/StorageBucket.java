@@ -1,5 +1,6 @@
-// Sprint:
 // Name: Andrew
+// Sprint: 4
+
 package com.troo.controllers.util;
 
 import java.util.ArrayList;
@@ -8,6 +9,8 @@ import com.troo.controllers.menu.Item;
 import com.troo.controllers.restaurants.Restaurant;
 
 public class StorageBucket {
+
+    // Data Fields / Storage
     private static ArrayList<String> userData = new ArrayList<String>();
     private static ArrayList<Item> cart = new ArrayList<Item>();
     private static Restaurant chosenRestaurant;
@@ -15,7 +18,9 @@ public class StorageBucket {
     private static String transactionNumber;
     private static double totalTime;
     public final static double TAX = 0.13;
+    public final static String serverUrl = "https://images-furot-tech.netlify.app/";
 
+    // Methods (Setters and Getters)
     public static void setUser(String email, String firstName, String lastName, String phone, String address) {
         userData.add(email);
         userData.add(firstName);
@@ -101,6 +106,7 @@ public class StorageBucket {
         return totalTime;
     }
 
+    // Methods (Other)
     public static void resetUser() {
         userData.clear();
     }
@@ -109,6 +115,7 @@ public class StorageBucket {
         cart.clear();
     }
 
+    // toString
     public String toString() {
         return "User: " + userData + " Cart: " + cart;
     }

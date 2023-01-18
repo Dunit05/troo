@@ -1,5 +1,5 @@
 // Name: Tommy
-// Sprint: 
+// Sprint: 5
 package com.troo.controllers;
 
 import java.io.BufferedReader;
@@ -46,7 +46,7 @@ public class Order implements Initializable {
     @FXML
     private CheckBox darkModeCheckBox;
 
-    // Initialize the order screen with an override
+    // Override method to override the default page data with the Order page data
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Set the restaurant name
@@ -147,14 +147,17 @@ public class Order implements Initializable {
             protected void updateItem(Item item, boolean empty) {
                 super.updateItem(item, empty);
 
+                // If the item is empty, set the text and graphic to null, meaning no data will
+                // be shown in that cell
                 if (empty || item == null || item.getImagePath() == null) {
                     setText(null);
                     setGraphic(null);
                 } else {
+                    // If the item is not empty, set the text and graphic
                     String text = "Dish: " + item.getName() + "\nPrice: $" + item.getPrice() + "\nDescription: "
                             + item.getDescription() + "\nNutrition Notes: "
                             + item.getNutritionNotes();
-                    String imagePath = "https://images-furot-tech.netlify.app/" + item.getImagePath() + ".png";
+                    String imagePath = StorageBucket.serverUrl + item.getImagePath() + ".png";
                     Image image = new Image(imagePath);
                     ImageView imageView = new ImageView(image);
                     imageView.setFitHeight(80);
@@ -172,14 +175,17 @@ public class Order implements Initializable {
             protected void updateItem(Item item, boolean empty) {
                 super.updateItem(item, empty);
 
+                // If the item is empty, set the text and graphic to null, meaning no data will
+                // be shown in that cell
                 if (empty || item == null || item.getImagePath() == null) {
                     setText(null);
                     setGraphic(null);
                 } else {
+                    // If the item is not empty, set the text and graphic
                     String text = "Dish: " + item.getName() + "\nPrice: $" + item.getPrice() + "\nDescription: "
                             + item.getDescription() + "\nNutrition Notes: "
                             + item.getNutritionNotes();
-                    String imagePath = "https://images-furot-tech.netlify.app/" + item.getImagePath() + ".png";
+                    String imagePath = StorageBucket.serverUrl + item.getImagePath() + ".png";
                     Image image = new Image(imagePath);
                     ImageView imageView = new ImageView(image);
                     imageView.setFitHeight(80);
@@ -197,14 +203,17 @@ public class Order implements Initializable {
             protected void updateItem(Item item, boolean empty) {
                 super.updateItem(item, empty);
 
+                // If the item is empty, set the text and graphic to null, meaning no data will
+                // be shown in that cell
                 if (empty || item == null || item.getImagePath() == null) {
                     setText(null);
                     setGraphic(null);
                 } else {
+                    // If the item is not empty, set the text and graphic
                     String text = "Dish: " + item.getName() + "\nPrice: $" + item.getPrice() + "\nDescription: "
                             + item.getDescription() + "\nNutrition Notes: "
                             + item.getNutritionNotes();
-                    String imagePath = "https://images-furot-tech.netlify.app/" + item.getImagePath() + ".png";
+                    String imagePath = StorageBucket.serverUrl + item.getImagePath() + ".png";
                     Image image = new Image(imagePath);
                     ImageView imageView = new ImageView(image);
                     imageView.setFitHeight(80);
@@ -222,14 +231,17 @@ public class Order implements Initializable {
             protected void updateItem(Item item, boolean empty) {
                 super.updateItem(item, empty);
 
+                // If the item is empty, set the text and graphic to null, meaning no data will
+                // be shown in that cell
                 if (empty || item == null || item.getImagePath() == null) {
                     setText(null);
                     setGraphic(null);
                 } else {
+                    // If the item is not empty, set the text and graphic
                     String text = "Dish: " + item.getName() + "\nPrice: $" + item.getPrice() + "\nDescription: "
                             + item.getDescription() + "\nNutrition Notes: "
                             + item.getNutritionNotes();
-                    String imagePath = "https://images-furot-tech.netlify.app/" + item.getImagePath() + ".png";
+                    String imagePath = StorageBucket.serverUrl + item.getImagePath() + ".png";
                     Image image = new Image(imagePath);
                     ImageView imageView = new ImageView(image);
                     imageView.setFitHeight(80);
@@ -322,6 +334,7 @@ public class Order implements Initializable {
             StorageBucket.addToCart(selectedDrinksItem);
         }
 
+        // Change the scene to the home screen
         Controller.changeScene("/com/troo/screens/Home.fxml", event);
     }
 
@@ -335,9 +348,9 @@ public class Order implements Initializable {
         Controller.changeScene("/com/troo/screens/Cart.fxml", event);
     }
 
+    // Andrew's code
     // Set the order screen to dark mode
     public void setDarkModeOrderScreen(ActionEvent event) {
-        // see if the checkbox is selected
         if (darkModeCheckBox.isSelected()) {
             SetDarkMode.setDarkModeTextField(appetizersQuantityField);
             SetDarkMode.setDarkModeTextField(entreesQuantityField);

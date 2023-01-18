@@ -8,6 +8,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 import java.io.IOException;
 import java.util.UUID;
 
+// Import the required libraries
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -15,11 +16,13 @@ import okhttp3.Response;
 import okhttp3.HttpUrl.Builder;
 
 public class AddressAutocomplete {
-    // Auto complete address function, takes in the address and a UUID
+
+    // Auto complete address function, takes in a String address and a UUID
     public static String autocompleteAddress(String address, UUID uuid) {
         // Open a new dotenv file to get the Google Maps API key
         Dotenv dotenv = Dotenv.load();
 
+        // API URL:
         // https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Paris&types=geocode&key=YOUR_API_KEY"
 
         // Create an HTTPs request to maps.googleapis.com to predict the address

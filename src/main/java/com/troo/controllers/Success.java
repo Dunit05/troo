@@ -1,5 +1,5 @@
-// Name: Tomm
-// Sprint: 
+// Name: Tommy
+// Sprint: 6
 package com.troo.controllers;
 
 import java.io.File;
@@ -34,7 +34,7 @@ public class Success implements Initializable {
     @FXML
     Button homeButton, logoutButton;
 
-    // Initialize the success screen with an override
+    // Override method to override the default page data with the Success page data
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Set the labels
@@ -62,6 +62,7 @@ public class Success implements Initializable {
         StorageBucket.resetUser();
     }
 
+    // Andrew's code
     // Set the dark mode for the success screen
     public void setDarkModeSuccessScreen(ActionEvent event) {
         if (darkModeCheckBox.isSelected()) {

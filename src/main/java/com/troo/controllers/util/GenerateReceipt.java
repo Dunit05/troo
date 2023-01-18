@@ -1,5 +1,5 @@
 // By: Tommy
-// Sprint: 
+// Sprint: 7
 
 package com.troo.controllers.util;
 
@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Calendar;
 
+// Import all the necessary libraries for PDF creation
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.WebColors;
 import com.itextpdf.kernel.geom.PageSize;
@@ -38,7 +39,7 @@ public class GenerateReceipt {
         float[] itemsColWidth = { COL, DOUBLE_COL, COL, COL };
         float[] fullColWidth = { DOUBLE_COL };
 
-        // Create a new pdf document
+        // Create a new pdf document with FileOutputStream
         try {
             FileOutputStream fos = new FileOutputStream(
                     "src/main/resources/com/troo/data/transaction_data/" + StorageBucket.getReceiptNumber() + ".pdf");
@@ -47,7 +48,7 @@ public class GenerateReceipt {
             pdf.setDefaultPageSize(PageSize.A4);
             Document document = new Document(pdf);
 
-            // Receipt tebles and lines and space objects
+            // Outline the receipt tebles and lines and space objects
             Table receiptInfoTable = new Table(threeColWidthForTop);
             Table nestedReciptInfoTable = new Table(twoColWidth);
             Table informationTable = new Table(twoColWidthForInfo);
@@ -160,6 +161,8 @@ public class GenerateReceipt {
             document.add(line2);
             document.add(space);
             document.add(thankyou);
+
+            // Close the document
             document.close();
 
         } catch (FileNotFoundException e) {

@@ -1,5 +1,5 @@
 // By: Tommy
-// Sprint:
+// Sprint: 5
 
 package com.troo.controllers;
 
@@ -52,6 +52,7 @@ public class Home implements Initializable {
     @FXML
     private TextField searchField;
 
+    // Data Fields
     private ArrayList<Restaurant> restaurantList = new ArrayList<Restaurant>();
 
     // Override the initialize method to load all the page data
@@ -125,13 +126,17 @@ public class Home implements Initializable {
             @Override
             public void updateItem(Restaurant restaurant, boolean empty) {
                 super.updateItem(restaurant, empty);
+
+                // If the item is empty, set the text and graphic to null, meaning no data will
+                // be shown in that cell
                 if (empty || restaurant == null) {
                     setText(null);
                     setGraphic(null);
                 } else {
+                    // If the item is not empty, set the text and graphic
                     String text = restaurant.getName() + "\n" + restaurant.getRating() + " Restaurant Rating\n"
                             + restaurant.getDescription() + "\n" + restaurant.getLocation();
-                    String imagePath = "https://images-furot-tech.netlify.app/" + restaurant.getImagePath() + ".png";
+                    String imagePath = StorageBucket.serverUrl + restaurant.getImagePath() + ".png";
                     Image image = new Image(imagePath);
                     ImageView imageView = new ImageView(image);
                     imageView.setFitHeight(80);
@@ -148,19 +153,25 @@ public class Home implements Initializable {
     public void search() {
         String search = searchField.getText();
 
+        // Add an event listener to the search field to search for restaurants
         searchField.setOnKeyReleased(event -> {
+            // If the backspace or delete key is pressed, clear the listview and add all the
+            // default restaurants
             if (event.getCode() == KeyCode.BACK_SPACE || event.getCode() == KeyCode.DELETE) {
                 restaurants.getItems().clear();
                 for (Restaurant restaurant : restaurantList) {
                     restaurants.getItems().add(restaurant);
                 }
             } else {
+                // If any other key is pressed, clear the listview and add the restaurants that
+                // match the search
                 ObservableList<Restaurant> items = FXCollections.observableArrayList();
                 for (Restaurant restaurant : restaurants.getItems()) {
                     if (restaurant.getName().toLowerCase().contains(search.toLowerCase())) {
                         items.add(restaurant);
                     }
                 }
+                // Add the restaurants that match the search to the listview
                 restaurants.setItems(items);
             }
         });
@@ -188,9 +199,9 @@ public class Home implements Initializable {
         Controller.changeScene("/com/troo/screens/Cart.fxml", event);
     }
 
+    // Andrew's code
     // Set the dark mode for the Home screen
     public void setDarkModeHomeScreen(ActionEvent event) {
-        // see if the checkbox is selected
         if (darkModeCheckBox.isSelected()) {
             SetDarkMode.setDarkModeTextField(searchField);
             SetDarkMode.setDarkModeListView(restaurants);
