@@ -1,6 +1,7 @@
 // Names: Tommy, Andrew, Suchir
 // Date due: Janurary, 18th, 2023
-// Troo by Furot
+// tróo by Furot
+// Sprint: 3
 
 package com.troo;
 
@@ -15,6 +16,7 @@ import java.io.IOException;
 public class App extends Application {
     // Override the start method in the Application class
     @Override
+    // Sets the stage and scene to the Login.fxml file
     public void start(Stage stage) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/com/troo/screens/Login.fxml"));
@@ -25,7 +27,7 @@ public class App extends Application {
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

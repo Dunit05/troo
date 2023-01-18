@@ -8,9 +8,9 @@ public class GenerateCode {
     // 2 return functions. 1 to generate a 6 digit code, and 1 to generate 18
     // alphanumeric character code (Ju89lL5258K78LGrT7), they cannot be the same as
     // any of the other one in the other file (Transactions.txt)
-    // "C:/Users/suchi/OneDrive/Documents/troo/src/main/resources/com/troo/data/transactions.txt"
+    // "src/main/resources/com/troo/data/transaction_data/transactions.txt"
 
-    public String receiptCode() {
+    public static String receiptCode() {
         // declare variables
         String code = "";
         String line = "";
@@ -18,7 +18,7 @@ public class GenerateCode {
 
         try {
             // create file reader and buffered reader
-            FileReader fr = new FileReader("src/main/resources/com/troo/data/transactions.txt");
+            FileReader fr = new FileReader("src/main/resources/com/troo/data/transaction_data/transactions.txt");
             BufferedReader br = new BufferedReader(fr);
 
             do {
@@ -42,13 +42,14 @@ public class GenerateCode {
                     // if code is unique then code is returned
                     else {
                         sameNum = true;
+                        br.close(); // should close
                         return code;
                     }
                     line = br.readLine();
                 }
             } while (!sameNum);
             // closing br
-            br.close();// should close
+            br.close();
         } catch (IOException err) {
             System.out.println("Error reading from the file");
             err.printStackTrace();
@@ -58,7 +59,7 @@ public class GenerateCode {
     }
 
     // this method will generate an 18 digit alphanumeric code
-    public String transactionCode() {
+    public static String transactionCode() {
         // creating code array for every possible character that can be in the code
         char[] code = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
         // declaring and initializing variables
@@ -70,7 +71,7 @@ public class GenerateCode {
         try {
             // creating file reader and file writer
             FileReader fr = new FileReader(
-                    "src/main/resources/com/troo/data/transactions.txt");
+                    "src/main/resources/com/troo/data/transaction_data/transactions.txt");
             BufferedReader br = new BufferedReader(fr);
             // do while loop will keep repeating if code generated is the same as a previous
             // code
@@ -96,6 +97,7 @@ public class GenerateCode {
                         sameTransCode = false;
                     } else {
                         sameTransCode = true;
+                        br.close(); // should close
                         return alphaCode;
                     }
                 }

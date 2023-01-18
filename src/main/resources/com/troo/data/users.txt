@@ -1,6 +1,0 @@
-[Email: dev@furot.tech
-Password: a8a86be97cfe43a43117ec9aed878cd2e0577035936fc2e8df455e2be3d4afda
-First Name: Furot
-Last Name: Admin
-Phone: 1234567890
-Address: 1234 Main St]

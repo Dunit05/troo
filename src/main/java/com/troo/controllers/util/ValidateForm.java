@@ -117,7 +117,7 @@ public class ValidateForm {
             PasswordField passwordField) {
         // Try to read the users.txt file
         try {
-            FileReader fr = new FileReader("src/main/resources/com/troo/data/users.txt");
+            FileReader fr = new FileReader("src/main/resources/com/troo/data/user_data/users.txt");
             BufferedReader br = new BufferedReader(fr);
             String line = "", emailLine = "", passwordLine = "";
             while ((line = br.readLine()) != null) {
@@ -132,10 +132,11 @@ public class ValidateForm {
                     Error.removeError(errorLabel);
                     Error.removeTextFieldErrorBorder(textField);
                     Error.removePasswordFieldErrorBorder(passwordField);
+                    br.close();
                     return true;
                 }
             }
-            br.close(); // This should close the reader
+            br.close();
             // If the email and password do not match, set the error label and textfield
             // error
             Error.setError("Email or password is incorrect", errorLabel);
@@ -157,7 +158,7 @@ public class ValidateForm {
             TextField phoneTextField) {
         // Try to read the users.txt file
         try {
-            FileReader fr = new FileReader("src/main/resources/com/troo/data/users.txt");
+            FileReader fr = new FileReader("src/main/resources/com/troo/data/user_data/users.txt");
             BufferedReader br = new BufferedReader(fr);
             String line = "", emailLine = "", phoneLine = "";
             while ((line = br.readLine()) != null) {
@@ -172,10 +173,11 @@ public class ValidateForm {
                     Error.setError("Email and password must be unique", errorLabel);
                     Error.setTextFieldErrorBorder(phoneTextField);
                     Error.setTextFieldErrorBorder(emailTextField);
+                    br.close();
                     return false;
                 }
             }
-            br.close(); // This should close the reader
+            br.close();
             // If the email and phone do not match, remove the error label and textfield
             // error
             Error.removeError(errorLabel);
@@ -187,6 +189,5 @@ public class ValidateForm {
             Error.setError("There was an error", errorLabel);
         }
         return false;
-
     }
 }
