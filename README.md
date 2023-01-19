@@ -109,6 +109,12 @@ Transaction:
 Receipt:]
 ```
 
+- Receipts are also generated in PDF format, and are saved in the below folder, with QR codes
+
+```
+src/main/resources/com/troo/data/transaction_data/
+```
+
 - Menu items are stored in src/main/resources/com/troo/data/restaurants/
 - Each restaurant has its own file contaning the menu items
 - Each menu item has a path to an image, the program posts to a URL with that image path to get the image

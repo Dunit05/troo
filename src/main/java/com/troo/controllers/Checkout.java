@@ -143,6 +143,8 @@ public class Checkout implements Initializable {
             }
         }
 
+        // Go through each restaurant and get the distance from the user to the
+        // restaurant, and add it to the total distance time
         for (int i = 0; i < restaurants.size(); i++) {
             double dis = 0;
             dis = DistanceMatrix.getTime(restaurants.get(i), StorageBucket.getUserAddress());

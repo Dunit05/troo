@@ -100,7 +100,7 @@ public class Cart implements Initializable {
 
     // Method to go back to the menu
     public void back(ActionEvent event) {
-        Controller.changeScene("/com/troo/screens/Login.fxml", event);
+        Controller.changeScene("/com/troo/screens/Home.fxml", event);
     }
 
     // Method to go to the checkout screen
