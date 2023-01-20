@@ -67,7 +67,8 @@ public class Checkout implements Initializable {
         // Variables
         double[] times = new double[StorageBucket.getCart().size()];
         ArrayList<String> restaurants = new ArrayList<String>();
-        double largest = 0, totalDisTime = 0;
+        double largest = 0, totalDisTime = 0, totalTime = 0;
+        int timesLength = times.length;
         String receiptNumber = "", transactionNumber = "", qrCodeText = "", filePath = "";
 
         // Check if the user has entered all the information
@@ -121,8 +122,8 @@ public class Checkout implements Initializable {
         }
 
         // Sort the prep times array using bubble sort
-        for (int i = 0; i < times.length; i++) {
-            for (int j = 0; j < times.length - 1; j++) {
+        for (int i = 0; i < timesLength; i++) {
+            for (int j = 0; j < timesLength - 1; j++) {
                 if (times[j] > times[j + 1]) {
                     double temp = times[j];
                     times[j] = times[j + 1];
@@ -143,6 +144,8 @@ public class Checkout implements Initializable {
             }
         }
 
+        // Go through each restaurant and get the distance from the user to the
+        // restaurant, and add it to the total distance time
         for (int i = 0; i < restaurants.size(); i++) {
             double dis = 0;
             dis = DistanceMatrix.getTime(restaurants.get(i), StorageBucket.getUserAddress());
@@ -151,7 +154,7 @@ public class Checkout implements Initializable {
 
         // Add up the total time, which is the largest prep time added to the total
         // distance time
-        double totalTime = largest + totalDisTime;
+        totalTime = largest + totalDisTime;
 
         // Set the delivery time
         StorageBucket.setDeliveryTime(totalTime);

@@ -3,6 +3,13 @@
 
 package com.troo.controllers.util;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Base64;
+
+import java.io.IOException;
+
+// Import all the necessary libraries
 import com.sendgrid.Method;
 import com.sendgrid.Request;
 import com.sendgrid.Response;
@@ -10,12 +17,6 @@ import com.sendgrid.SendGrid;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Attachments;
 import com.sendgrid.helpers.mail.objects.Content;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Base64;
-
-import java.io.IOException;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
